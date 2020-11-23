@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/Main.css">
+    <script src="../JS/main.js">
+    </script>
+
+</head>
+
+
+
+
+<body onload="ChangerDestination();prntPrix()" onchange="prntPrix()">
+
+  <header>
+    <img class="Logo" src="../IMG/logo.png" alt="Logotype de l'agence de voyage Zendhi">
+    <span class="NomAg">VYG</span>
+    <img class="Cart" src="../IMG/cart.png" alt="Image du panier">
+  </header>
+
+  <div class = "RetourMenu" onclick="returnMenu()">
+      <p>retour au menu principal</p>
+      
+  </div>
+
+
+ <h1>Formulaire</h1>
+ 
+ <div id = "erreur_date"></div>
+
+ <h2 id = 'Destination'>Destination</h2>
+ 
+
+ <form id='form' action="Recapitulatif.html" method="GET">
+
+    <fieldset class="champ1">
+        <legend id="Identite"><b>Identité</b></legend>
+       <label class="description" for="Nom">Nom<sup>*</sup> :</label>
+       <input id="Nom" type="text" name="Nom"><br><br>
+    
+       <label class="description" for="Prenom">Prénom<sup>*</sup> :</label>
+       <input id="Prenom" type="text" name="Premon"><br><br>
+       
+       <label class="description" for="Adresse_mail">Adresse mail<sup>*</sup> :</label>
+       <input id="Adresse_mail" type="email" name="email"><br><br>
+       
+       <label class="description" for="Numero_de_telephone">Téléphone<sup>*</sup> :</label>
+       <input id="Numero_de_telephone" type="tel" name="Numero de telephone"><br><br>
+     </fieldset>
+ 
+     <label class="description" for="Date_de_depart">Date de départ<sup>*</sup> :</label>
+     <input id="Date_de_depart" type="date" name="Date de depart"><br><br>
+     
+     <label class="description" for="Date_de_retour">Date de retour<sup>*</sup> :</label>
+     <input id="Date_de_retour" type="date" name="Date de retour"><br><br>
+     
+     <label class="description" for="Nombre_d'adultes">Nombre d'adultes<sub>*</sub> :</label>
+     <input id="Nombre_d'adultes" type="number" min="0" max="20" name="Nombre d'adultes" value = "0">
+     
+     <br><br>
+     
+     <label class="description" for="Nombre_d'enfants">Nombre d'enfants (-12 ans)<sup>*</sup> :</label>
+     <input id="Nombre_d'enfants" type="number" min="0" max="20" name="Nombre d'enfants" value = "0"><br><br>
+     
+     <p class="description">Petit-déjeuné inclus : <input type="checkbox" name="Petit-dejeune" id="Petit-dejeune"></p><br><br>
+     
+     Renseignements diverse que nous devrions savoir :<br>
+     <input id="Renseignements" type="text" size="70" name="Renseignements"><br><br>
+ 
+     <!-- Une fenêtre affichant le prix total en fonction des informations remplies.-->
+     <span>
+       <input type="reset" value="Remise à zéro" name="Remise à zero" id="Remise_a_zero">
+       <input type="button" value="Soumettre" name="submit" id="submit" onclick="saveF()">
+     </span>
+
+     
+    </fieldset>
+
+
+    <div>Le prix : </div>
+    <div id="prix"></div>
+
+ </form>
+
+</body>
+</html>

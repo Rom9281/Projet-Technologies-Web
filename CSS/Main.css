@@ -1,0 +1,156 @@
+body{
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+    background: -webkit-linear-gradient(45deg,#00fff0, #4ef037);
+    -webkit-background-clip : text;
+    -webkit-text-fill-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 65px;
+}
+
+.Description{
+    font-style: italic;
+}
+
+.Nom_Comp{
+    text-align: center;
+    color: greenyellow;
+}
+.selection{
+    color: teal;
+}
+
+.sub_fill{
+    color: rgb(54,52,65);
+    font: underline;
+    text-decoration: underline;
+}
+
+#Remise_a_zero{
+    margin: 0 0 0 30%;
+    background-color: white;
+}
+
+#submit{
+    margin: 0 0 0 30%;
+    color: white;
+    background-color: rgb(23, 80, 185);
+    border-radius: 2mm;
+    padding: 5mm 7mm 5mm 7mm;
+    font-size: 1.2rem;
+}
+
+.description{
+    color: rgb(47, 58, 68);
+}
+
+#Identite{
+    font-size: 150%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+label + input{
+    border-radius: 1mm;
+}
+
+.selector{
+    padding: 1mm;
+}
+
+#Ville{
+    text-align: center;
+}
+
+#Renseignements{
+    border-radius: 1mm;
+}
+
+#Petit-dejeune{
+    border-radius: 1mm;
+}
+
+.espace{
+    height: 50px;
+    display:block;
+}
+
+.recap_cadre{
+    display: flex;
+    width: 100%;
+    
+}
+.coord{
+    width: 35%;
+    background-color: lightblue;
+    background-image: -webkit-linear-gradient(45deg,#26baee,#9fe8fa);
+    border: solid;
+    border-color: black;
+}
+.vide{
+    width: 10%;
+    background-color: white;
+}
+.info_voyage{
+    width: 35%;
+    background-color: lightblue;
+    background-image: -webkit-linear-gradient(200deg,#26baee,#9fe8fa);
+    border-color: black;
+}
+header{
+    background:white;
+    border: solid;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 2mm;
+    height: 120px;
+    display: flex;
+}
+header .Logo{
+    flex: 1;
+    width: 120px;
+    height: 120px;
+}
+header .NomAg{
+    flex: 8;
+    font-family: Arial Black, Helvetica, sans-serif;
+    background: -webkit-linear-gradient(45deg,#00fff0, #4ef037);
+    -webkit-background-clip : text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-size: 100px;
+}
+
+header .Cart{
+    flex: 1;
+    width: 120px;
+    height: 120px;
+}
+.RetourMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: -webkit-linear-gradient(45deg,#114c61, #9fe8fa);
+    -webkit-background-clip : text;
+    -webkit-text-fill-color: transparent;
+    height: 25px;
+    font-size: 20px;
+    font-family: Arial Black, Helvetica, sans-serif;
+}
+
+footer{
+    background-color: grey;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#erreur{
+    color: red;
+    font-weight: bold;
+    font-size: larger;
+}

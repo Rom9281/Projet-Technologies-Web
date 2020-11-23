@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Je suis le récapitulatif</title>
+
+
+    <script type="text/javascript" src="../JS/main.js"></script>
+    <link rel="stylesheet" href="../CSS/Main.css">
+
+</head>
+
+
+<body onload="Recap()">
+
+    <header>
+        <img class="Logo" src="../IMG/logo.png" alt="Logotype de l'agence de voyage Zendhi">
+        <span class="NomAg">VYG</span>
+        <img class="Cart" src="../IMG/cart.png" alt="Image du panier">
+    </header>
+
+    <div class = "RetourMenu" onclick="returnMenu()">
+        <p>retour au menu principal</p>
+        
+    </div>
+
+    <h1>Recapitulatif</h1>
+
+    <div class = "recap_cadre">
+        <span class="vide"></span>
+        <span class="coord">
+            <h3 class = "Var_Recap">Nom : </h3>
+                <h4 id = "Nom"></h4>
+            
+            <h3 class = "Var_Recap : ">Prenom :</h3>
+                <h4 id = "Prenom"></h4>
+            
+            <h3 class = "Var_Recap : ">Email:</h3>
+                <h4 id = "Adresse_mail"></h4>
+
+            <h3 class = "Var_Recap">Num Tel : </h3>
+                <h4 id = "Numero_de_telephone"></h4>
+        </span>
+
+        <span class="vide"></span>
+
+        <span class="info_voyage">
+            <h3 class = "Var_Recap : ">Destination:</h3>
+                <h4 id = "Destination"></h4>
+
+            <h3 class = "Var_Recap">Date de depart : </h3>
+                <h4 id = "Date_de_depart"></h4>
+            
+            <h3 class = "Var_Recap : ">Date de retour:</h3>
+                <h4 id = "Date_de_retour"></h4>
+            
+        </span>
+
+        <span class="vide"></span>
+    </div>
+
+</body>
+</html>

@@ -196,23 +196,43 @@ class cVoyage{
 function printVilles(){
     fetch("../JS/main.json")
     .then(function(response) {
-        return response.json()
+    return response.json()
     })
     .then(function(json) {
-        for (var i = 0; i < json.length;i++) {
-
-            //Creer le div principal
-            var div = document.createElement("div");
-            div.setAttribute('id',json[i].Nom);
-            var contenu = document.createTextNode(json[i].Nom);
-
-            // ajoute le nœud texte au nouveau div créé
-            div.appendChild(contenu);
-
-            // ajoute le nouvel élément créé et son contenu dans le DOM
-            var currentDiv = document.getElementById('Villes');
-            document.body.insertBefore(div, currentDiv);
-        }
+    for (var i = 0; i < json.length;i++) {
+    
+    //Creer le div principal
+    var div = document.createElement("div");
+    div.setAttribute('class',json[i].Order);
+    var contenu = document.createTextNode(json[i].Nom);
+    
+    // ajoute le nœud texte au nouveau div créé
+    div.appendChild(contenu);
+    
+    // ajoute une image dans un div a chaque objet de class Destination
+    var image = document.createElement("img");
+    image.setAttribute('src', json[i].Image);
+    image.setAttribute('alt', "Photo de " + json[i].Nom);
+    image.setAttribute('height', 200);
+    image.setAttribute('width', 300);
+    var div2 = document.createElement("div");
+    div2.appendChild(image);
+    div.appendChild(div2);
+    
+    // Petite description de la ville
+    var descript = document.createElement("pre");
+    descript.setAttribute('class', "Description")
+    var contenu = document.createTextNode(json[i].Description);
+    descript.appendChild(contenu);
+    div.appendChild(descript);
+    
+    // API météo sur place
+    //var meteo = document.createElement('div');
+    
+    // ajoute le nouvel élément créé et son contenu dans le DOM
+    var currentDiv = document.getElementById('Villes');
+    document.body.insertBefore(div, currentDiv);
+    }
     })
-}
+   }
 

@@ -300,6 +300,7 @@ function eraseError(){
 
 
 //____________  Verifiction pour passer au Recap ____________
+
 function saveF(){
     if (validDate()){ // Pas oublier de remmetre date
         if(validClient()){

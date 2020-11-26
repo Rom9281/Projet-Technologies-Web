@@ -100,12 +100,25 @@ function validClient(){
     }
 }
 
+function validProfil(){
+    var inputs = document.getElementById('form').elements;
+    var nom = inputs["Nom"].value;
+    var prenom = inputs["Prenom"].value;
+    var email = inputs["Adresse_mail"].value;
+    var tel = inputs["Numero_de_telephone"].value;
+    if (((nom != "") && (prenom != "")) && ((email != "") && (tel != ""))){
+        return true
+    }
+    else{
+        return false
+    }
+}
+
 //--------------------------------------------
 //--------  Erreures possibles ---------------
 function date_error(){
-    if (!(document.getElementById("date_error") == null)){
-        document.getElementById("date_error").remove();
-    }
+    eraseError();
+
     var div1 = document.createElement("div");
     div1.setAttribute('id',"date_error");
     div1.setAttribute('class',"error")
@@ -120,9 +133,8 @@ function date_error(){
 }
 
 function client_error(){
-    if (!(document.getElementById("client_error") == null)){
-        document.getElementById("client_error").remove();
-    }
+    eraseError();
+
     var div1 = document.createElement("div");
     div1.setAttribute('id',"client_error");
     div1.setAttribute('class',"error")
@@ -136,14 +148,48 @@ function client_error(){
     document.body.insertBefore(div1, currentDiv1);
 }
 
+function profile_error(){
+    eraseError();
+    
+    var div1 = document.createElement("div");
+    div1.setAttribute('id',"profile_error");
+    div1.setAttribute('class',"error")
+    var contenu1 = document.createTextNode("!Erreur! : Le profile est incomplet: il manque le nom, prenom, email ou numero de telephone.");
+
+    // ajoute le nœud texte au nouveau div créé
+    div1.appendChild(contenu1);
+
+    // ajoute le nouvel élément créé et son contenu dans le DOM
+    var currentDiv1 = document.getElementById('error');
+    document.body.insertBefore(div1, currentDiv1);
+}
+
+
+function eraseError(){
+    if (!(document.getElementById("date_error") == null)){
+        document.getElementById("date_error").remove();
+    }
+    if (!(document.getElementById("client_error") == null)){
+        document.getElementById("client_error").remove();
+    }
+    if (!(document.getElementById("profile_error") == null)){
+        document.getElementById("profile_error").remove();
+    }
+}
+
 
 //------------------------------------------------
 //------ Verifiction pour passer au Recap---------
 function saveF(){
-    if (validDate()){
+    if (validDate()){ // Pas oublier de remmetre date
         if(validClient()){
-            document.forms["form"].submit;
-            window.location.replace("Recapitulatif.html");
+            if(validProfil()){
+                document.forms["form"].submit;
+                window.location.replace("Recapitulatif.html");
+            }
+            else{
+                profile_error();
+            }
         }
         else{
             client_error()

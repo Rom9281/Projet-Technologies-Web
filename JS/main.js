@@ -204,10 +204,16 @@ function printVilles(){
     //Creer le div principal
     var div = document.createElement("div");
     div.setAttribute('class',json[i].Order);
+    var link = document.createElement("a");
+    link.setAttribute('href','Formulaire.html');
+    var initClass = "initClass('";
+    initClass += json[i].Nom;
+    initClass += "')";
+    link.setAttribute('onclick',initClass)
     var contenu = document.createTextNode(json[i].Nom);
     
     // ajoute le nœud texte au nouveau div créé
-    div.appendChild(contenu);
+    link.appendChild(contenu);
     
     // ajoute une image dans un div a chaque objet de class Destination
     var image = document.createElement("img");
@@ -217,17 +223,18 @@ function printVilles(){
     image.setAttribute('width', 300);
     var div2 = document.createElement("div");
     div2.appendChild(image);
-    div.appendChild(div2);
+    link.appendChild(div2);
     
     // Petite description de la ville
     var descript = document.createElement("pre");
     descript.setAttribute('class', "Description")
     var contenu = document.createTextNode(json[i].Description);
     descript.appendChild(contenu);
-    div.appendChild(descript);
+    link.appendChild(descript);
     
     // API météo sur place
     //var meteo = document.createElement('div');
+    div.appendChild(link);
     
     // ajoute le nouvel élément créé et son contenu dans le DOM
     var currentDiv = document.getElementById('Villes');

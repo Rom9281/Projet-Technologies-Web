@@ -3,14 +3,12 @@
         "Nom":"Paris",
         "Image":"https://cdn.pixabay.com/photo/2015/07/13/14/40/paris-843229__340.jpg",
         "Description":"La ville, lumiere, la capitale, paris ne peut qu'etre un excellent choix de voyage",
-        "PrixAd":50,
-        "PrixEn":30
+        "PrixAd":50
     },
     {
         "Nom":"Hong Kong",
         "Image":"https://cdn.pixabay.com/photo/2015/07/13/14/40/paris-843229__340.jpg",
         "Description":"La ville, lumiere, la capitale, paris ne peut qu'etre un excellent choix de voyage",
-        "PrixAd":50,
-        "PrixEn":30
+        "PrixAd":150
     }
 ]

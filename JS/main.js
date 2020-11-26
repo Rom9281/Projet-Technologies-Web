@@ -156,12 +156,10 @@ function saveF(){
 }
 
 function init(){
-    if (getChoice("Init") == null){
-        localStorage.clear();
-        var aVoyages = new Array;
-        saveListe("voyages",aVoyages);
-        saveChoice("Init","1");
-    }
+    localStorage.clear();
+    var aVoyages = new Array;
+    saveListe("voyages",aVoyages);
+    window.location.replace("Menu_Principal.html");
 }
 
 function returnMenu(){
@@ -169,7 +167,7 @@ function returnMenu(){
         var aVoyages = getListe("voyages");
         aVoyages.pop();
         saveListe("voyages",aVoyages)
-        window.location.replace("Index.html");
+        window.location.replace("Menu_Principal.html");
     } else {
         alert("   -   Retour Annulé   -   ");
     }
@@ -221,45 +219,6 @@ class cVoyage{
         this.nbEn = 0;
         this.dateA = "";
         this.dateR = "";
-    }
-    getdest_nb(){
-        return this.dest_nb
-    }
-    getDestination(){
-        return this.destination
-    }
-    getnbAd(){
-        return this.nbAd
-    }
-    getnbEn(){
-        return this.nbEn
-    }
-    getdateA(){
-        return this.nbEn
-    }
-    getdateR(){
-        return this.nbEn
-    }
-    modifydestination(val){
-        this.destination = val;
-    }
-    modifydest_nb(val){
-        this.dest_nb = val;
-    }
-    modifynbEn(val){
-        this.nbEn = val;
-    }
-    modifynbAd(val){
-        this.nbAd = val;
-    }
-    modifydateA(val){
-        this.dateA = val;
-    }
-    modifydateR(val){
-        this.dateR = val;
-    }
-    saveData(){
-        sessionStorage.setItem("Voyage"+this.dest_nb,Voyage); 
     }
     
 }

@@ -36,50 +36,70 @@ function Recap(){
 }
 
 function prntPrix(){
-    var prix_ad = getChoice('prixAd')
-    var prix_en = getChoice('prixEn')
+    var prix_adulte = getChoice('prix_adulte')
+    var prix_enfant = 0.4*prix_adulte
     var inputs = document.getElementById('form').elements;
-    if ((parseInt(inputs["Nombre_d'adultes"].value) == undefined) && (parseInt(inputs["Nombre_d'enfants"].value) == undefined )){
-        chgbyId('0','prix');
-    }else if (parseInt(inputs["Nombre_d'adultes"].value) == undefined){
-        
-        chgbyId(parseInt(inputs["Nombre_d'enfants"].value)*prix_en,'prix');
+    var petit_dej = document.getElementById("petit_dej").value;
+    if (validDate()){
+        var nb_jours = validDate()
 
-    }else if(parseInt(inputs["Nombre_d'enfants"].value) == undefined){
-        var prix = parseInt(inputs["Nombre_d'adultes"].value)*prix_en
-        chgbyId(prix,'prix');
+        if ((parseInt(inputs["Nombre_d'adultes"].value) == undefined) && (parseInt(inputs["Nombre_d'enfants"].value) == undefined )){
+            chgbyId('0','prix');
+        }else if (parseInt(inputs["Nombre_d'adultes"].value) == undefined){
+            
+            chgbyId(parseInt(inputs["Nombre_d'enfants"].value)*prix_enfant*nb_jours,'prix');
+    
+        }else if(parseInt(inputs["Nombre_d'enfants"].value) == undefined){
+            var prix = parseInt(inputs["Nombre_d'adultes"].value)*prix_adulte*nb_jours
+            chgbyId(prix,'prix');
+        }
+        else{
+            var prix = (parseInt(inputs["Nombre_d'adultes"].value)*prix_ad+parseInt(inputs["Nombre_d'enfants"].value)*prix_en)*nb_jours;
+            chgbyId(prix,'prix');
+        }
     }
-    else{
-        var prix = parseInt(inputs["Nombre_d'adultes"].value)*prix_ad+parseInt(inputs["Nombre_d'enfants"].value)*prix_en;
-        chgbyId(prix,'prix');
-    }
+    
     
 }
 
-function saveF(){
+function validDate(){
     var inputs = document.getElementById('form').elements;
     var depart = inputs["Date_de_depart"].value;
     var retour = inputs["Date_de_retour"].value;
     if(depart < retour){
+        return retour-depart
+    }
+    else{
+        return False
+    }
+}
+
+function date_error(){
+    if (!(document.getElementById("erreur") == null)){
+        document.getElementById("erreur").remove();
+    }
+    
+    var div1 = document.createElement("div");
+    div1.setAttribute('id',"erreur");
+    var contenu1 = document.createTextNode(" - !Erreur! : Verifiez bien que le depart soit avant le retour, ou que la date est valide");
+
+    // ajoute le nœud texte au nouveau div créé
+    div1.appendChild(contenu1);
+
+    // ajoute le nouvel élément créé et son contenu dans le DOM
+    var currentDiv1 = document.getElementById('erreur_date');
+    document.body.insertBefore(div1, currentDiv1);
+}
+
+function saveF(){
+    if (validDate()){
         document.forms["form"].submit;
         window.location.replace("Recapitulatif.html");
     }
     else{
-        if (!(document.getElementById("erreur") == null)){
-            document.getElementById("erreur").remove();
-        }
-        
-        var div1 = document.createElement("div");
-        div1.setAttribute('id',"erreur");
-        var contenu1 = document.createTextNode(" - !Erreur! : Verifiez bien que le depart soit avant le retour, ou que la date est valide");
-
-        // ajoute le nœud texte au nouveau div créé
-        div1.appendChild(contenu1);
-
-        // ajoute le nouvel élément créé et son contenu dans le DOM
-        var currentDiv1 = document.getElementById('erreur_date');
-        document.body.insertBefore(div1, currentDiv1);
+        date_error()
     }
+
 }
 
 
@@ -135,7 +155,7 @@ function getInfo(){
         for (var i = 0; i < json.length;i++) {
             if (json[i].destination == destination){
                 var prix_adulte = json[i].prixAd;
-                var prix_enfant =prix_adulte*0.4
+                saveChoice("prix_adulte", prix_adulte)
             }
         }
 

@@ -119,7 +119,7 @@ header .NomAg{
     flex: 8;
     font-family: Arial Black, Helvetica, sans-serif;
     background: -webkit-linear-gradient(45deg,#00fff0, #4ef037);
-    -webkit-background-clip : text;
+    background-clip : text;
     -webkit-text-fill-color: transparent;
     text-align: center;
     font-size: 100px;
@@ -135,7 +135,7 @@ header .Cart{
     justify-content: center;
     align-items: center;
     background: -webkit-linear-gradient(45deg,#114c61, #9fe8fa);
-    -webkit-background-clip : text;
+    background-clip : text;
     -webkit-text-fill-color: transparent;
     height: 25px;
     font-size: 20px;
@@ -149,7 +149,7 @@ footer{
     left: 0;
     right: 0;
 }
-#erreur{
+.error{
     color: red;
     font-weight: bold;
     font-size: larger;

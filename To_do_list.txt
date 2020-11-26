@@ -1,0 +1,18 @@
+Choses encore à faire non exaustive :
+- tout le CSS à la fin
+- Faire apparaitre le prix sur un séjeour /adulte et /jour
+- Ajouter un "A propos" sur l'histoire, la création et les personnes dans le projet.
+        idées : 
+        - développement sur qui nous sommes, affichage dans deux ronds nos tetes
+        - petite biographie de nous ou on se fait plaiz
+        - Nos roles dans la création
+        - date de création de l'entreprise
+- prix enfant à remplacer par 40% du prix adulte
+- footer du site calqué sur des sites cool genre bandeau noir et tout (privacy policy, lien à propos et contacts, etc...)
+- supplément de 12 €/jours/personnes
+- sur toutes les pages :
+    - menu de navigation
+    - pied de page ( footer)
+    - bouton retour en haut de la page qui n'apparait que quand l'utilisateur descend un peu
+- sur la page des contacts :
+

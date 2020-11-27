@@ -1,3 +1,54 @@
+//_________________ INITIALISATION _____________
+function init(){
+    localStorage.clear();
+    var aVoyages = new Array;
+    saveListe("voyages",aVoyages);
+    window.location.replace("Menu_Principal.html");
+}
+
+function initClass(destination){
+    var aVoyages = getListe("voyages");
+    const voyage = new cVoyage(destination);
+    aVoyages.push(voyage);
+    saveListe("voyages",aVoyages);
+}
+
+function returnVoyage(){
+    var aVoyages = getListe("voyages");
+    return aVoyages[aVoyages.length - 1]
+}
+
+function ChangerDestination(){
+    var voyage = returnVoyage()
+    var destination = voyage.destination;
+    chgbyId(destination,'Destination')
+}
+
+//__________________ CLASSE VOYAGE ______________
+class cVoyage{
+    constructor(destination){
+        this.destination = destination;
+        this.nbAd = 0;
+        this.nbEn = 0;
+        this.dateA = "";
+        this.dateR = "";
+    }
+    
+}
+//_________________ RETOUR AU MENU______________
+function returnMenu(){
+    if ( confirm( "  -  Retourner au Menu Principal? Cela effacera la progression. -  " ) ) {
+        var aVoyages = getListe("voyages");
+        aVoyages.pop();
+        saveListe("voyages",aVoyages)
+        window.location.replace("Menu_Principal.html");
+    } else {
+        alert("   -   Retour Annulé   -   ");
+    }
+
+}
+//_________________ LOCAL STORAGE _________________
+
 function saveChoice(variable,choix) {
     localStorage.setItem(variable, choix);
 }
@@ -24,6 +75,8 @@ function saveForm(Id){
         saveChoice(inputs[i].id,inputs[i].value)
     }
 }
+
+//______________ INTERACTION HTML _________________
 
 function Recap(){
     chgbyId(getChoice('Nom'),'Nom')
@@ -75,9 +128,78 @@ function calcJours(){
     
     return diff_jours
 }
+//_______________ INFO VOYAGE _______________
+function getInfo(){
+    var voyage = returnVoyage();
+    var destination = voyage.destination;
+    fetch("../JS/main.json")
+    .then(function(response) {
+        return response.json()
+    })
+    .then(function(json) {
+        for (var i = 0; i < json.length;i++) {
+            if (json[i].Nom == destination){
+                var prix_adulte = json[i].PrixAd;
+                saveChoice("prix_adulte", prix_adulte)
+            }
+        }
+
+    })
+
+}
 
 
-//---------- Validation des criteres --------
+//______________ IMPRIMER LES VILLES ____________
+function printVilles(){
+    fetch("../JS/main.json")
+    .then(function(response) {
+    return response.json()
+    })
+    .then(function(json) {
+    for (var i = 0; i < json.length;i++) {
+    
+    //Creer le div principal
+    var div = document.createElement("div");
+    div.setAttribute('class',json[i].Order);
+    var link = document.createElement("a");
+    link.setAttribute('href','Formulaire.html');
+    var initClass = "initClass('";
+    initClass += json[i].Nom;
+    initClass += "')";
+    link.setAttribute('onclick',initClass)
+    var contenu = document.createTextNode(json[i].Nom);
+    
+    // ajoute le nœud texte au nouveau div créé
+    link.appendChild(contenu);
+    
+    // ajoute une image dans un div a chaque objet de class Destination
+    var image = document.createElement("img");
+    image.setAttribute('src', json[i].Image);
+    image.setAttribute('alt', "Photo de " + json[i].Nom);
+    image.setAttribute('height', 200);
+    image.setAttribute('width', 300);
+    var div2 = document.createElement("div");
+    div2.appendChild(image);
+    link.appendChild(div2);
+    
+    // Petite description de la ville
+    var descript = document.createElement("pre");
+    descript.setAttribute('class', "Description")
+    var contenu = document.createTextNode(json[i].Description);
+    descript.appendChild(contenu);
+    link.appendChild(descript);
+    
+    // API météo sur place
+    //var meteo = document.createElement('div');
+    div.appendChild(link);
+    
+    // ajoute le nouvel élément créé et son contenu dans le DOM
+    var currentDiv = document.getElementById('Villes');
+    document.body.insertBefore(div, currentDiv);
+    }
+    })
+   }
+//__________________ Validation des criteres __________________
 function validDate(){
     var inputs = document.getElementById('form').elements;
     var depart = inputs["Date_de_depart"].value;
@@ -114,8 +236,7 @@ function validProfil(){
     }
 }
 
-//--------------------------------------------
-//--------  Erreures possibles ---------------
+//______________________ Erreures possibles _____________________
 function date_error(){
     eraseError();
 
@@ -178,8 +299,8 @@ function eraseError(){
 }
 
 
-//------------------------------------------------
-//------ Verifiction pour passer au Recap---------
+//____________  Verifiction pour passer au Recap ____________
+
 function saveF(){
     if (validDate()){ // Pas oublier de remmetre date
         if(validClient()){
@@ -200,122 +321,4 @@ function saveF(){
     }
 
 }
-
-function init(){
-    localStorage.clear();
-    var aVoyages = new Array;
-    saveListe("voyages",aVoyages);
-    window.location.replace("Menu_Principal.html");
-}
-
-function returnMenu(){
-    if ( confirm( "  -  Retourner au Menu Principal? Cela effacera la progression. -  " ) ) {
-        var aVoyages = getListe("voyages");
-        aVoyages.pop();
-        saveListe("voyages",aVoyages)
-        window.location.replace("Menu_Principal.html");
-    } else {
-        alert("   -   Retour Annulé   -   ");
-    }
-
-}
-
-function initClass(destination){
-    var aVoyages = getListe("voyages");
-    const voyage = new cVoyage(destination);
-    aVoyages.push(voyage);
-    saveListe("voyages",aVoyages);
-}
-
-//Fonction permettant d'imprimer un element de la classe voyage
-function returnVoyage(){
-    var aVoyages = getListe("voyages");
-    return aVoyages[aVoyages.length - 1]
-}
-
-function ChangerDestination(){
-    var voyage = returnVoyage()
-    var destination = voyage.destination;
-    chgbyId(destination,'Destination')
-}
-
-function getInfo(){
-    var voyage = returnVoyage();
-    var destination = voyage.destination;
-    fetch("../JS/main.json")
-    .then(function(response) {
-        return response.json()
-    })
-    .then(function(json) {
-        for (var i = 0; i < json.length;i++) {
-            if (json[i].Nom == destination){
-                var prix_adulte = json[i].PrixAd;
-                saveChoice("prix_adulte", prix_adulte)
-            }
-        }
-
-    })
-
-}
-
-class cVoyage{
-    constructor(destination){
-        this.destination = destination;
-        this.nbAd = 0;
-        this.nbEn = 0;
-        this.dateA = "";
-        this.dateR = "";
-    }
-    
-}
-
-function printVilles(){
-    fetch("../JS/main.json")
-    .then(function(response) {
-    return response.json()
-    })
-    .then(function(json) {
-    for (var i = 0; i < json.length;i++) {
-    
-    //Creer le div principal
-    var div = document.createElement("div");
-    div.setAttribute('class',json[i].Order);
-    var link = document.createElement("a");
-    link.setAttribute('href','Formulaire.html');
-    var initClass = "initClass('";
-    initClass += json[i].Nom;
-    initClass += "')";
-    link.setAttribute('onclick',initClass)
-    var contenu = document.createTextNode(json[i].Nom);
-    
-    // ajoute le nœud texte au nouveau div créé
-    link.appendChild(contenu);
-    
-    // ajoute une image dans un div a chaque objet de class Destination
-    var image = document.createElement("img");
-    image.setAttribute('src', json[i].Image);
-    image.setAttribute('alt', "Photo de " + json[i].Nom);
-    image.setAttribute('height', 200);
-    image.setAttribute('width', 300);
-    var div2 = document.createElement("div");
-    div2.appendChild(image);
-    link.appendChild(div2);
-    
-    // Petite description de la ville
-    var descript = document.createElement("pre");
-    descript.setAttribute('class', "Description")
-    var contenu = document.createTextNode(json[i].Description);
-    descript.appendChild(contenu);
-    link.appendChild(descript);
-    
-    // API météo sur place
-    //var meteo = document.createElement('div');
-    div.appendChild(link);
-    
-    // ajoute le nouvel élément créé et son contenu dans le DOM
-    var currentDiv = document.getElementById('Villes');
-    document.body.insertBefore(div, currentDiv);
-    }
-    })
-   }
 

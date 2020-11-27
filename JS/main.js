@@ -8,7 +8,8 @@ function init(){
 
 function initClass(destination){
     var aVoyages = getListe("voyages");
-    const voyage = new cVoyage(destination);
+    var id = genId();
+    const voyage = new cVoyage(destination, id);
     aVoyages.push(voyage);
     saveListe("voyages",aVoyages);
 }
@@ -17,21 +18,49 @@ function returnVoyage(){
     var aVoyages = getListe("voyages");
     return aVoyages[aVoyages.length - 1]
 }
+function saveVoyage(voyage){
+    var aVoyages = getListe("voyages");
+    aVoyages.pop(aVoyages.length - 1);
+    aVoyages.push(voyage);
+    saveListe("voyages",aVoyages)
+}
 
 function ChangerDestination(){
     var voyage = returnVoyage()
     var destination = voyage.destination;
-    chgbyId(destination,'Destination')
+    chgbyId(destination,'Destination');
 }
+//______________ GENERATE NUMBER _______________
 
+function genId(){
+    Id = "v"
+    for (i = 1; i < 16; i++) {
+        if (i%4 == 0){
+            Id = Id + "-"
+        }
+        else{
+            var rand = Math.floor(Math.random() * 10);
+            rand = rand.toString()
+            Id += rand
+        }
+    }
+    return Id
+}
 //__________________ CLASSE VOYAGE ______________
 class cVoyage{
-    constructor(destination){
+    constructor(destination, id){
         this.destination = destination;
-        this.nbAd = 0;
-        this.nbEn = 0;
-        this.dateA = "";
-        this.dateR = "";
+        this.id = Id;
+        this.nom = "";
+        this.prenom = "";
+        this.tel = "";
+        this.email = "";
+        this.nombre_adultes = 0;
+        this.nombre_enfants = 0;
+        this.date_depart = "";
+        this.date_retour = "";
+        this.prix = 0;
+        this.petit_dej = false;
     }
     
 }
@@ -78,16 +107,6 @@ function saveForm(Id){
 
 //______________ INTERACTION HTML _________________
 
-function Recap(){
-    chgbyId(getChoice('Nom'),'Nom')
-    chgbyId(getChoice('Prenom'),'Prenom')
-    chgbyId(getChoice('Adresse_mail'),'Adresse_mail')
-    chgbyId(getChoice('Date_de_depart'),'Date_de_depart')
-    chgbyId(getChoice('Date_de_retour'),'Date_de_retour')
-    chgbyId(getChoice('Destination'),'Destination')
-    chgbyId(getChoice('Numero_de_telephone'),'Numero_de_telephone')
-}
-
 function prntPrix(){
     getInfo()
     var prix_adulte = getChoice('prix_adulte')
@@ -106,6 +125,10 @@ function prntPrix(){
         prix = prix*nb_jours;
         prix = prix + 14*nb_jours*(nombre_adultes+nombre_enfants)*petit_dej
         chgbyId(prix,'prix');
+        var voyage = returnVoyage()
+        voyage.prix = prix
+        voyage.petit_dej = petit_dej;
+        saveVoyage(voyage)
     }
     else{
         chgbyId('Veuillez selectionner des dates valides pour afficher le prix.','prix');
@@ -147,8 +170,6 @@ function getInfo(){
     })
 
 }
-
-
 //______________ IMPRIMER LES VILLES ____________
 function printVilles(){
     fetch("../JS/main.json")
@@ -199,12 +220,49 @@ function printVilles(){
     }
     })
    }
-//__________________ Validation des criteres __________________
+
+//__________________ IMPRESSION DU RECAP ______________________
+
+function Recap(){
+    var voyage = returnVoyage();
+    chgbyId(voyage.id,'id');
+    chgbyId(voyage.nom,'Nom');
+    chgbyId(voyage.prenom,'Prenom');
+    chgbyId(voyage.email,'Adresse_mail');
+    chgbyId(voyage.date_depart,'Date_de_depart');
+    chgbyId(voyage.date_retour,'Date_de_retour');
+    chgbyId(voyage.destination,'Destination');
+    chgbyId(voyage.tel,'Numero_de_telephone');
+    chgbyId(voyage.nombre_adultes,'nombre_adultes');
+    chgbyId(voyage.nombre_enfants,'nombre_enfants');
+    chgbyId(voyage.prix,'prix');
+    if (voyage.petit_dej){
+        chgbyId("Inclus",'petit_dej')
+    }
+    else{
+        chgbyId("Non-inclus",'petit_dej')
+    }
+    
+}
+
+//__________________ VALIDATION DES CRITERES __________________
 function validDate(){
     var inputs = document.getElementById('form').elements;
     var depart = inputs["Date_de_depart"].value;
     var retour = inputs["Date_de_retour"].value;
-    if(depart < retour){
+
+    var auj = new Date();
+    var jour = auj.getDate();
+    var mois = auj.getMonth() + 1; 
+    var annee = auj.getFullYear();
+    
+    auj = annee+'-'+mois+'-'+jour
+
+    if((depart < retour) && (depart > auj)){
+        var voyage = returnVoyage()
+        voyage.date_depart = depart;
+        voyage.date_retour = retour;
+        saveVoyage(voyage)
         return true
     }
     else{
@@ -214,7 +272,12 @@ function validDate(){
 function validClient(){
     var inputs = document.getElementById('form').elements;
     var nombre_adultes = inputs["Nombre_d'adultes"].value;
+    var nombre_enfants = inputs["Nombre_d'enfants"].value;
     if(nombre_adultes >= 1){
+        var voyage = returnVoyage()
+        voyage.nombre_adultes = nombre_adultes;
+        voyage.nombre_enfants =nombre_enfants;
+        saveVoyage(voyage)
         return true
     }
     else{
@@ -229,6 +292,12 @@ function validProfil(){
     var email = inputs["Adresse_mail"].value;
     var tel = inputs["Numero_de_telephone"].value;
     if (((nom != "") && (prenom != "")) && ((email != "") && (tel != ""))){
+        var voyage = returnVoyage()
+        voyage.nom = nom,
+        voyage.prenom = prenom,
+        voyage.email = email,
+        voyage.tel = tel,
+        saveVoyage(voyage)
         return true
     }
     else{

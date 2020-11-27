@@ -85,22 +85,46 @@ label + input{
     
 }
 .coord{
-    width: 35%;
+    width: 30%;
     background-color: lightblue;
     background-image: -webkit-linear-gradient(45deg,#26baee,#9fe8fa);
     border: solid;
     border-color: black;
 }
 .vide{
-    width: 10%;
+    width: 5%;
     background-color: white;
 }
 .info_voyage{
-    width: 35%;
+    width: 30%;
     background-color: lightblue;
     background-image: -webkit-linear-gradient(200deg,#26baee,#9fe8fa);
+    border: solid;
     border-color: black;
 }
+.info_voyageurs{
+    width: 30%;
+    background-color: lightblue;
+    background-image: -webkit-linear-gradient(200deg,#9fe8fa,#26baee);
+    border: solid;
+    border-color: black;
+}
+
+.id{
+    background-color: lightblue;
+    background-image: -webkit-linear-gradient(200deg,#9fe8fa,#26baee);
+    border: solid;
+    border-color: black;
+}
+
+.prix{
+    background-color: lightblue;
+    background-image: -webkit-linear-gradient(200deg,#9fe8fa,#26baee);
+    border: solid;
+    border-color: black;
+}
+
+
 header{
     background:white;
     border: solid;

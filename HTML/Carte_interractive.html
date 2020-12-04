@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carte</title>
-    <link rel="stylesheet" href="../CSS/Carte_interractive.css">
+    <script src="../JS/main.js"></script>
     <style type="text/css">
-        .map path:hover{
-            fill: red;
-        }
         .map {
             margin: 3px solid black;
         } 
@@ -19,9 +16,12 @@
             stroke-opacity: 1;
             stroke-width:0.5;
         }
+        .map path[target="True"]:hover{
+            fill: red;
+        }
     </style>
 </head>
-<body>
+<body onload=updatePath()>
     <div class="map" id="map">
 
         <div id="map__image">

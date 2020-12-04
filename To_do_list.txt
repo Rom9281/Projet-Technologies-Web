@@ -29,3 +29,4 @@ Choses encore à faire non exaustive :
 - "nous serons surtout attentifs sur la qualité et la clarté de votre code, plus que sur l’aspect « joli »de votre site !"
 - "Vous intégrerez également différents éléments multimédia, comme des vidéos Youtube présentant vos destinations."
 - devise dans le formulaire et le récap.
+- fct printVilles --> Order non existant, remettre ou changer

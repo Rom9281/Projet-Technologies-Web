@@ -403,3 +403,20 @@ function saveF(){
 
 }
 
+function updatePath(){
+    fetch("../JS/main.json")
+    .then(function(response) {
+    return response.json()
+    })
+    .then(function(json) {
+    for (var i = 0; i < json.length;i++) {
+
+        // place un attibut target sur les éléments contenus dans le json
+        var currentPath = document.getElementById(json[i].Id)
+        currentPath.setAttribute('target',"True")
+
+        currentPath.setAttribute('onclick',)
+    }
+})
+}
+

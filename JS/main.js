@@ -2,7 +2,9 @@
 function init(){
     localStorage.clear();
     var aVoyages = new Array;
+    var aPanier = new Array;
     saveListe("voyages",aVoyages);
+    saveListe("panier",aPanier);
     window.location.replace("Menu_Principal.html");
 }
 
@@ -22,6 +24,12 @@ function saveVoyage(voyage){
     var aVoyages = getListe("voyages");
     aVoyages.pop(aVoyages.length - 1);
     aVoyages.push(voyage);
+    saveListe("voyages",aVoyages)
+}
+
+function savePanier(voyage){
+    var aPanier = getListe("panier");
+    a.push(voyage);
     saveListe("voyages",aVoyages)
 }
 
@@ -222,6 +230,7 @@ function printVilles(){
    }
 
 //__________________ IMPRESSION DU RECAP ______________________
+//__________________ IMPRESSION DU RECAP ______________________
 
 function Recap(){
     var voyage = returnVoyage();
@@ -255,6 +264,9 @@ function validDate(){
     var jour = auj.getDate();
     var mois = auj.getMonth() + 1; 
     var annee = auj.getFullYear();
+    if (jour < 10){
+        jour = "0"+jour
+    }
     
     auj = annee+'-'+mois+'-'+jour
 

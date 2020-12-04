@@ -178,3 +178,39 @@ footer{
     font-weight: bold;
     font-size: larger;
 }
+#logotype_footer_div{
+    margin-left: 50px;
+}
+
+#last_line p{
+    text-align: center;
+}
+
+#footer_list{
+    display: flex ;
+    flex: auto;
+    margin-left: 40%;
+    box-sizing: border-box;
+}
+
+.elem_list{
+    margin-left: 10 px;
+    flex: 0 0 17%;
+}
+
+.Contact_ways{
+    text-align: center;
+    font-family: serif;
+}
+
+#logotype_footer_div img{
+    margin-top: 5px;
+    margin-left: 46%;
+}
+
+div#Map iframe{
+    border: 2px solid black;
+    width: 600px ;
+    height: 450px;
+    margin-left: 29%;
+}

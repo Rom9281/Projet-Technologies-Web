@@ -167,7 +167,7 @@ header .Cart{
 }
 
 footer{
-    background-color: grey;
+    background-color: rgb(36, 34, 34);
     position: relative;
     bottom: 0;
     left: 0;
@@ -184,6 +184,7 @@ footer{
 
 #last_line p{
     text-align: center;
+    color: white;
 }
 
 #footer_list{
@@ -196,6 +197,7 @@ footer{
 .elem_list{
     margin-left: 10 px;
     flex: 0 0 17%;
+    color: turquoise;
 }
 
 .Contact_ways{
@@ -205,7 +207,7 @@ footer{
 
 #logotype_footer_div img{
     margin-top: 5px;
-    margin-left: 46%;
+    margin-left: 44%;
 }
 
 div#Map iframe{
@@ -213,4 +215,7 @@ div#Map iframe{
     width: 600px ;
     height: 450px;
     margin-left: 29%;
+}
+#text_COVID{
+    font-family: sans-serif;
 }

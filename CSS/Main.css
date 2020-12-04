@@ -132,11 +132,13 @@ header{
     height: 120px;
     display: flex;
 }
+
 header .Logo{
     flex: 1;
     width: 120px;
     height: 120px;
 }
+
 header .NomAg{
     flex: 8;
     font-family: Arial Black, Helvetica, sans-serif;

@@ -29,8 +29,8 @@ function saveVoyage(voyage){
 
 function savePanier(voyage){
     var aPanier = getListe("panier");
-    a.push(voyage);
-    saveListe("voyages",aVoyages)
+    aPanier.push(voyage);
+    saveListe("panier",aPanier)
 }
 
 function ChangerDestination(){
@@ -69,6 +69,7 @@ class cVoyage{
         this.date_retour = "";
         this.prix = 0;
         this.petit_dej = false;
+        this.renseignements = "";
     }
     
 }
@@ -176,8 +177,8 @@ function getInfo(){
         }
 
     })
-
 }
+
 //______________ IMPRIMER LES VILLES ____________
 function printVilles(){
     fetch("../JS/main.json")
@@ -185,51 +186,75 @@ function printVilles(){
     return response.json()
     })
     .then(function(json) {
+    var div_p = document.createElement("div");
+    div_p.setAttribute('class','voyage');
+
     for (var i = 0; i < json.length;i++) {
-    
-    //Creer le div principal
-    var div = document.createElement("div");
-    div.setAttribute('class',json[i].Order);
-    var link = document.createElement("a");
-    link.setAttribute('href','Formulaire.html');
-    var initClass = "initClass('";
-    initClass += json[i].Nom;
-    initClass += "')";
-    link.setAttribute('onclick',initClass)
-    var contenu = document.createTextNode(json[i].Nom);
-    
-    // ajoute le nœud texte au nouveau div créé
-    link.appendChild(contenu);
-    
-    // ajoute une image dans un div a chaque objet de class Destination
-    var image = document.createElement("img");
-    image.setAttribute('src', json[i].Image);
-    image.setAttribute('alt', "Photo de " + json[i].Nom);
-    image.setAttribute('height', 200);
-    image.setAttribute('width', 300);
-    var div2 = document.createElement("div");
-    div2.appendChild(image);
-    link.appendChild(div2);
-    
-    // Petite description de la ville
-    var descript = document.createElement("pre");
-    descript.setAttribute('class', "Description")
-    var contenu = document.createTextNode(json[i].Description);
-    descript.appendChild(contenu);
-    link.appendChild(descript);
-    
-    // API météo sur place
-    //var meteo = document.createElement('div');
-    div.appendChild(link);
-    
+        
+        //Creer le div principal
+        var div = document.createElement("div");
+        div.setAttribute('class','voyages');
+        var link = document.createElement("a");
+        link.setAttribute('href','Formulaire.html');
+        var initClass = "initClass('";
+        initClass += json[i].Nom;
+        initClass += "')";
+        link.setAttribute('onclick',initClass)
+        var contenu = document.createTextNode(json[i].Nom);
+        
+        // ajoute le nœud texte au nouveau div créé
+        link.appendChild(contenu);
+        
+        // ajoute une image dans un div a chaque objet de class Destination
+        var image = document.createElement("img");
+        image.setAttribute('src', json[i].Image);
+        image.setAttribute('alt', "Photo de " + json[i].Nom);
+        image.setAttribute('class', "image")
+        var div2 = document.createElement("div");
+        div2.appendChild(image);
+        link.appendChild(div2);
+        
+        // Petite description de la ville
+        var descript = document.createElement("pre");
+        descript.setAttribute('class', "Description")
+        var contenu = document.createTextNode(json[i].Description);
+        descript.appendChild(contenu);
+        link.appendChild(descript);
+        
+        // API météo sur place
+        //var meteo = document.createElement('div');
+        div.appendChild(link);
+        div_p.appendChild(div);
+        
+        
+        }
     // ajoute le nouvel élément créé et son contenu dans le DOM
     var currentDiv = document.getElementById('Villes');
-    document.body.insertBefore(div, currentDiv);
-    }
+    document.body.insertBefore(div_p, currentDiv);
     })
    }
 
-//__________________ IMPRESSION DU RECAP ______________________
+//___________________ RETOUR SAISIE ___________________________
+
+function retourSaisie(){
+    var aVoyage = returnVoyage()
+}
+
+function eraseInfo(){
+    var aVoyage = returnVoyage();
+    aVoyages.nom = "";
+    aVoyages.prenom = "";
+    aVoyages.tel = "";
+    aVoyages.email = "";
+    aVoyages.nombre_adultes = 0;
+    aVoyages.nombre_enfants = 0;
+    aVoyages.date_depart = "";
+    aVoyages.date_retour = "";
+    aVoyages.prix = 0;
+    aVoyages.petit_dej = false;
+    aVoyages.renseignements = "";
+    return aVoyage
+}
 //__________________ IMPRESSION DU RECAP ______________________
 
 function Recap(){
@@ -244,6 +269,7 @@ function Recap(){
     chgbyId(voyage.tel,'Numero_de_telephone');
     chgbyId(voyage.nombre_adultes,'nombre_adultes');
     chgbyId(voyage.nombre_enfants,'nombre_enfants');
+    chgbyId(voyage.prix,'renseignement');
     chgbyId(voyage.prix,'prix');
     if (voyage.petit_dej){
         chgbyId("Inclus",'petit_dej')
@@ -303,12 +329,14 @@ function validProfil(){
     var prenom = inputs["Prenom"].value;
     var email = inputs["Adresse_mail"].value;
     var tel = inputs["Numero_de_telephone"].value;
+    var renseignements = inputs["Renseignements"].value;
     if (((nom != "") && (prenom != "")) && ((email != "") && (tel != ""))){
         var voyage = returnVoyage()
         voyage.nom = nom,
         voyage.prenom = prenom,
         voyage.email = email,
         voyage.tel = tel,
+        voyage.renseignements = renseignements,
         saveVoyage(voyage)
         return true
     }
@@ -316,6 +344,13 @@ function validProfil(){
         return false
     }
 }
+
+function validerVoyage(){
+    var aVoyage = returnVoyage
+    savePanier(aVoyage)
+    window.location.replace("Menu_Principal.html");
+}
+
 
 //______________________ Erreures possibles _____________________
 function date_error(){

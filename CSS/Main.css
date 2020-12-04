@@ -178,3 +178,17 @@ footer{
     font-weight: bold;
     font-size: larger;
 }
+.voyage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.voyages{
+    color: #114c61;
+    align-self: center;
+    text-align: center;
+}
+.image{
+    
+}

@@ -237,7 +237,8 @@ function printVilles(){
 //___________________ RETOUR SAISIE ___________________________
 
 function retourSaisie(){
-    var aVoyage = returnVoyage()
+    eraseInfo();
+    window.location.replace("Formulaire.html");
 }
 
 function eraseInfo(){
@@ -253,7 +254,7 @@ function eraseInfo(){
     aVoyages.prix = 0;
     aVoyages.petit_dej = false;
     aVoyages.renseignements = "";
-    return aVoyage
+    saveVoyage(aVoyages)
 }
 //__________________ IMPRESSION DU RECAP ______________________
 
@@ -269,7 +270,7 @@ function Recap(){
     chgbyId(voyage.tel,'Numero_de_telephone');
     chgbyId(voyage.nombre_adultes,'nombre_adultes');
     chgbyId(voyage.nombre_enfants,'nombre_enfants');
-    chgbyId(voyage.prix,'renseignement');
+    chgbyId(voyage.renseignements,'renseignement');
     chgbyId(voyage.prix,'prix');
     if (voyage.petit_dej){
         chgbyId("Inclus",'petit_dej')
@@ -346,7 +347,7 @@ function validProfil(){
 }
 
 function validerVoyage(){
-    var aVoyage = returnVoyage
+    var aVoyage = returnVoyage()
     savePanier(aVoyage)
     window.location.replace("Menu_Principal.html");
 }

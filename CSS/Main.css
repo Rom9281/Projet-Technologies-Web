@@ -21,9 +21,7 @@ h1 {
     text-align: center;
     color: greenyellow;
 }
-.selection{
-    color: teal;
-}
+
 
 .sub_fill{
     color: rgb(54,52,65);
@@ -167,7 +165,7 @@ header .Cart{
 }
 
 footer{
-    background-color: grey;
+    background-color: rgb(36, 34, 34);
     position: relative;
     bottom: 0;
     left: 0;
@@ -178,6 +176,7 @@ footer{
     font-weight: bold;
     font-size: larger;
 }
+<<<<<<< HEAD
 .voyage{
     display: flex;
     flex-direction: column;
@@ -190,5 +189,69 @@ footer{
     text-align: center;
 }
 .image{
+}
+=======
+#logotype_footer_div{
+    margin-left: 50px;
+}
+
+#last_line p{
+    text-align: center;
+    color: white;
+}
+
+#footer_list{
+    display: flex ;
+    flex: auto;
+    margin-left: 40%;
+    box-sizing: border-box;
+}
+
+.elem_list{
+    margin-left: 10 px;
+    flex: 0 0 17%;
+    color: turquoise;
+}
+
+.Contact_ways{
+    text-align: center;
+    font-family: serif;
+}
+
+#logotype_footer_div img{
+    margin-top: 5px;
+    margin-left: 44%;
+}
+
+div#Map iframe{
+    border: 2px solid black;
+    width: 600px ;
+    height: 450px;
+    margin-left: 29%;
+}
+#text_COVID{
+    font-family: sans-serif;
+>>>>>>> 4b9314abf03f8d3f70bb9737b7c85133eddcaf3f
+}
+
+.select{
+    color: teal;
+    overflow: hidden;
+    display: flex;
+    height: 60px;
+}
+.select_txt{
+    flex: 2;
+    text-align: left;
+}
+.select_vide{
+    flex: 3;
+    display: block;
     
+}
+.select_filtre{
+    flex: 2;
+    text-align: center;
+    align-items: center;
+    align-content: center;
 }

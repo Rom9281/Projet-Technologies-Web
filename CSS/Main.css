@@ -176,7 +176,6 @@ footer{
     font-weight: bold;
     font-size: larger;
 }
-<<<<<<< HEAD
 .voyage{
     display: flex;
     flex-direction: column;
@@ -187,51 +186,12 @@ footer{
     color: #114c61;
     align-self: center;
     text-align: center;
+    color: teal;
+    font-family: Arial Black, Helvetica, sans-serif;
 }
 .image{
-}
-=======
-#logotype_footer_div{
-    margin-left: 50px;
-}
-
-#last_line p{
-    text-align: center;
-    color: white;
-}
-
-#footer_list{
-    display: flex ;
-    flex: auto;
-    margin-left: 40%;
-    box-sizing: border-box;
-}
-
-.elem_list{
-    margin-left: 10 px;
-    flex: 0 0 17%;
-    color: turquoise;
-}
-
-.Contact_ways{
-    text-align: center;
-    font-family: serif;
-}
-
-#logotype_footer_div img{
-    margin-top: 5px;
-    margin-left: 44%;
-}
-
-div#Map iframe{
-    border: 2px solid black;
-    width: 600px ;
-    height: 450px;
-    margin-left: 29%;
-}
-#text_COVID{
-    font-family: sans-serif;
->>>>>>> 4b9314abf03f8d3f70bb9737b7c85133eddcaf3f
+    height: 400px;
+    width: 700px;
 }
 
 .select{

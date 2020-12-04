@@ -2,15 +2,44 @@ body{
     background-color: white;
 }
 
-h1 {
+header .NomAg {
+    font-size: 90px;
+    display: inline-block;
+    background: white;
+    color: black;
+    position: relative;
+    font-family: Arial Black, Helvetica, sans-serif;
     text-align: center;
-    background: -webkit-linear-gradient(45deg,#00fff0, #4ef037);
-    -webkit-background-clip : text;
-    -webkit-text-fill-color: transparent;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 65px;
+    width: 88%;
+}
+
+.NomAg::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, #00fff0, #4ef037);
+    content: '';
+    display: block;
+    mix-blend-mode: screen;
+    padding: center;
+}
+header .Cart{
+    width: 120px;
+    height: 120px;
+}
+header .Logo{
+    width: 120px;
+    height: 120px;
+}
+header{
+    background:white;
+    border: solid;
+    position: sticky;
+    top: 2mm;
+    height: 120px;
+    display: flex;
 }
 
 .Description{
@@ -130,22 +159,6 @@ header{
     top: 2mm;
     height: 120px;
     display: flex;
-}
-
-header .Logo{
-    flex: 1;
-    width: 120px;
-    height: 120px;
-}
-
-header .NomAg{
-    flex: 8;
-    font-family: Arial Black, Helvetica, sans-serif;
-    background: -webkit-linear-gradient(45deg,#00fff0, #4ef037);
-    background-clip : text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-    font-size: 100px;
 }
 
 header .Cart{

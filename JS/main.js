@@ -242,7 +242,7 @@ function retourSaisie(){
 }
 
 function eraseInfo(){
-    var aVoyage = returnVoyage();
+    var aVoyages = returnVoyage();
     aVoyages.nom = "";
     aVoyages.prenom = "";
     aVoyages.tel = "";

@@ -16,14 +16,17 @@
             stroke-opacity: 1;
             stroke-width:0.5;
         }
+        .map path[target="True"]{
+            fill: #8ae0db;
+        }
         .map path[target="True"]:hover{
-            fill: red;
+            fill: #00dfd0;
         }
     </style>
 </head>
-<body onload=updatePath()>
-    <div class="map" id="map">
 
+<body onload="updatePath()">
+    <div class="map" id="map">
         <div id="map__image">
             <?xml version="1.0" encoding="utf-8"?>
             <!-- (c) ammap.com | SVG map of World - Low -->

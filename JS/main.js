@@ -450,8 +450,6 @@ function updatePath(){
         // place un attibut target sur les éléments contenus dans le json
         var currentPath = document.getElementById(json[i].Id)
         currentPath.setAttribute('target',"True")
-
-        currentPath.setAttribute('onclick',)
     }
 })
 }

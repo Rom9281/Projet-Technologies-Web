@@ -222,9 +222,6 @@ function printVilles(){
         link.appendChild(descript);
         
         // API météo sur place
-        //var meteo = document.createElement('div');
-        div.appendChild(link);
-        div_p.appendChild(div);
         
         
         }

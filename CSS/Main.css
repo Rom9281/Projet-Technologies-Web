@@ -286,9 +286,11 @@ footer a{
     stroke-opacity: 1;
     stroke-width:0.5;
 }
+
 .map path[target="True"]{
     fill: #8ae0db;
 }
+
 .map path[target="True"]:hover{
     fill: #00b8ab;
 }

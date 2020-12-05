@@ -220,10 +220,8 @@ function printVilles(){
         var contenu = document.createTextNode(json[i].Description);
         descript.appendChild(contenu);
         link.appendChild(descript);
-        
-        // API météo sur place
-        
-        
+        div.appendChild(link);
+        div_p.appendChild(div)
         }
     // ajoute le nouvel élément créé et son contenu dans le DOM
     var currentDiv = document.getElementById('Villes');

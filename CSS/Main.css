@@ -197,22 +197,63 @@ footer{
     justify-content: center;
 }
 .voyages{
+    
+    width: 60%;
+    height: 60%;
     color: #114c61;
     align-self: center;
     text-align: center;
     color: teal;
+    padding: 20px;
+    border: solid;
+    border-color: black;
+ 
+    
+}
+
+.voyage_image{
+    flex: 4;
+    height: 100%;
+    width: 100%;
+}
+
+
+.voyage_nom{
+    flex: 2;
+    font-size: 40px;
     font-family: Arial Black, Helvetica, sans-serif;
 }
-.image{
-    height: 400px;
-    width: 700px;
+
+.voyage_vide{
+    display: block;
+    height: 25px;
+}
+
+.voyage_descr{
+    flex: 1;
+    width: auto;
+    height: auto;
+    font-family: Arial Black, Helvetica, sans-serif;
+}
+
+
+.voyage_lien{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.voyage_espace{
+    display: block;
+    height: 60px;
 }
 
 .select{
     color: teal;
     overflow: hidden;
     display: flex;
-    height: 60px;
+    height: 80px;
 }
 .select_txt{
     flex: 2;

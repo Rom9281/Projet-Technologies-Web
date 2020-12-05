@@ -192,36 +192,59 @@ function printVilles(){
     for (var i = 0; i < json.length;i++) {
         
         //Creer le div principal
-        var div = document.createElement("div");
-        div.setAttribute('class','voyages');
+        var div_gen = document.createElement("div");
+        div_gen.setAttribute('class','voyages');
+
+        //cree la balise a pour le lien
         var link = document.createElement("a");
         link.setAttribute('href','Formulaire.html');
+        link.setAttribute('class','voyage_lien');
         var initClass = "initClass('";
         initClass += json[i].Nom;
         initClass += "')";
         link.setAttribute('onclick',initClass)
+
+        //cree un div pour mettre le nom du voyage
+        var div_nom = document.createElement("div");
+        div_nom.setAttribute('class','voyage_nom');
         var contenu = document.createTextNode(json[i].Nom);
+        div_nom.appendChild(contenu);
         
         // ajoute le nœud texte au nouveau div créé
-        link.appendChild(contenu);
+        link.appendChild(div_nom);
+        
+
+        //vide entre le nom et l'image
+        var div_vide = document.createElement("div");
+        div_vide.setAttribute('class','voyage_vide');
+        link.appendChild(div_vide);
         
         // ajoute une image dans un div a chaque objet de class Destination
         var image = document.createElement("img");
         image.setAttribute('src', json[i].Image);
         image.setAttribute('alt', "Photo de " + json[i].Nom);
-        image.setAttribute('class', "image")
+        image.setAttribute('class', "voyage_image")
         var div2 = document.createElement("div");
         div2.appendChild(image);
         link.appendChild(div2);
+
+        link.appendChild(div_vide);
         
         // Petite description de la ville
-        var descript = document.createElement("pre");
-        descript.setAttribute('class', "Description")
+        var descript = document.createElement("div");
+        descript.setAttribute('class', "voyage_descr")
         var contenu = document.createTextNode(json[i].Description);
         descript.appendChild(contenu);
         link.appendChild(descript);
-        div.appendChild(link);
-        div_p.appendChild(div)
+        div_gen.appendChild(link);
+        div_p.appendChild(div_gen)
+
+        // Creation de l'espace
+        var div_esp = document.createElement("div");
+        div_esp.setAttribute('class','voyage_espace');
+        div_p.appendChild(div_esp)
+        
+        
         }
     // ajoute le nouvel élément créé et son contenu dans le DOM
     var currentDiv = document.getElementById('Villes');

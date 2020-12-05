@@ -276,3 +276,19 @@ footer a{
     color: white;
     text-decoration: none;
 }
+.map{
+    margin: 3px solid black;
+} 
+.land{
+    fill: #CCCCCC;
+    fill-opacity: 1;
+    stroke:white;
+    stroke-opacity: 1;
+    stroke-width:0.5;
+}
+.map path[target="True"]{
+    fill: #8ae0db;
+}
+.map path[target="True"]:hover{
+    fill: #00b8ab;
+}

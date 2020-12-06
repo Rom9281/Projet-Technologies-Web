@@ -457,7 +457,7 @@ function saveF(){
 
 }
 
-//____________  Carte interractive (ciblage et redirection) ____________
+//____________ Carte interractive (ciblage et redirection) ____________
 function updatePath(){
     fetch("../JS/main.json")
     .then(function(response) {
@@ -492,5 +492,36 @@ function toolPath(nom){
         else{
         }
     }
+    })
+}
+
+// ____________ Vérification du login et password ____________
+
+function checkLogin(){
+    fetch("../JS/database.json")
+    .then(function(response) {
+    return response.json()
+    })
+    .then(function(json) {
+        var Username = document.getElementById("Username").value;
+        alert(Username)
+        var Password = document.getElementById("Password").value;
+        alert(Password)
+        var alerte = true;
+        for (var i = 0; i < json.length;i++) {
+            if (Username == json[i].Login && Password == json[i].Password) {
+                alerte = true;
+                break;
+            } else {
+                alerte = false;
+            }        
+        }
+        alert(alerte)
+        if (alerte) {
+            alert("Connexion réussie");
+        } 
+        if (!alerte) {
+            alert("Votre identifiant ou votre mot de passe est incorrect. Veuillez réessayer.");
+        }
     })
 }

@@ -317,6 +317,146 @@ function sortCroissant(json){
 
 }
 
+//___________________ IMPRESSION PANIER ______________________
+
+
+function printPanier(){
+    var panier = getListe("panier");
+    //Creer le div principal
+    var div_p = document.createElement("div");
+    div_p.setAttribute('class','panier_ens');
+    if (panier.length == 0){
+        var div_rien = document.createElement("div");
+        var contenu = document.createTextNode("Il n'y a rien dans le panier");
+        div_rien.setAttribute('class','panier_rien');
+        div_rien.appendChild(contenu);
+        div_p.appendChild(div_rien)
+        var currentDiv = document.getElementById('contenu');
+        document.body.insertBefore(div_p, currentDiv);
+    }
+
+    else{
+        for (var i = 0; i < panier.length;i++) {
+
+            //Creer le div general
+            var div_gen = document.createElement("div");
+            div_gen.setAttribute('class','panier_ticket');
+
+            //cree un div pour mettre le nom du voyage
+            var div_dest = document.createElement("div");
+            div_dest.setAttribute('class','panier_destination');
+
+            var contenu = document.createTextNode("Destination : ");
+            div_dest.appendChild(contenu);
+
+            var contenu = document.createTextNode(panier[i].destination);
+            div_dest.appendChild(contenu);
+
+            div_gen.appendChild(div_dest)
+
+            //cree un div pour mettre le nom du voyage
+            var div_id = document.createElement("div");
+            div_id.setAttribute('class','panier_id');
+
+            var contenu = document.createTextNode("ID voyage : ");
+            div_id.appendChild(contenu);
+
+            var contenu = document.createTextNode(panier[i].id);
+            div_id.appendChild(contenu);
+
+            div_gen.appendChild(div_id)
+
+            //creer le div du nom du voyage
+            var div_nom = document.createElement("div");
+            div_nom.setAttribute('class','panier_nom');
+
+            var contenu = document.createTextNode("Nom de la reservation : ");
+            div_nom.appendChild(contenu);
+
+            var contenu = document.createTextNode(panier[i].nom);
+            div_nom.appendChild(contenu);
+
+            div_gen.appendChild(div_nom)
+
+            //creer le div du nom du voyage
+            var div_nb = document.createElement("div");
+            div_nb.setAttribute('class','panier_nombre');
+
+            var contenu = document.createTextNode("Nombre d'adultes : ");
+            div_nb.appendChild(contenu);
+            var contenu = document.createTextNode(panier[i].nombre_adultes);
+            div_nb.appendChild(contenu);
+
+            var contenu = document.createTextNode("  |  Nombre d'enfants : ");
+            div_nb.appendChild(contenu);
+            var contenu = document.createTextNode(panier[i].nombre_enfants);
+            div_nb.appendChild(contenu);
+
+            div_gen.appendChild(div_nb);
+            
+            //creer le div du prix
+            var div_prix = document.createElement("div");
+            div_prix.setAttribute('class','panier_prix');
+            var contenu = document.createTextNode("Prix : ");
+            div_prix.appendChild(contenu);
+            var contenu = document.createTextNode(panier[i].prix);
+            div_prix.appendChild(contenu);
+            var contenu = document.createTextNode("€");
+            div_prix.appendChild(contenu);
+            div_gen.appendChild(div_prix)
+
+            //Div espace
+            var div_es = document.createElement("div");
+            div_es.setAttribute('class','panier_espace');
+            div_gen.appendChild(div_es);
+
+            var btn = document.createElement("BUTTON");
+            
+            btn.setAttribute('class','panier_suppr');
+
+            var fonction = 'supVoyage("'
+            fonction += i.toString()
+            fonction += '")'
+            btn.setAttribute('onclick',fonction);
+            var contenu = document.createTextNode("Supprimer le voyage");
+            btn.appendChild(contenu);
+            div_gen.appendChild(btn)
+
+
+            //Append le div d'un ticket au div principal
+            div_p.appendChild(div_gen)
+
+             //Div espace
+             var div_es = document.createElement("div");
+             div_es.setAttribute('class','panier_espace');
+             div_p.appendChild(div_es);
+
+        }
+        var btn = document.createElement("BUTTON");
+        btn.setAttribute('class','panier_suppr');
+
+        var fonction = 'supPanier()'
+        btn.setAttribute('onclick',fonction);
+        var contenu = document.createTextNode("Supprimer tout le panier");
+        btn.appendChild(contenu);
+        div_gen.appendChild(btn)
+        var currentDiv = document.getElementById('contenu');
+        document.body.insertBefore(div_p, currentDiv);
+    }
+}
+//___________________ SUPRIMER UN VOYAGE DU PANIER ___________
+function supPanier(){
+    if ( confirm( "Supprimer tout votre Panier? Vous serez rediriger vers l'acceuil." ) ) {
+        window.location.replace("Index.html");
+    }
+}
+function supVoyage(i){
+    if ( confirm( "Supprimer ce voyage?" ) ) {
+        var panier = getListe('panier');
+        panier.splice(i,1);
+        saveListe("panier",panier);
+        window.location.replace("Panier.html");}
+}
 //___________________ RETOUR SAISIE ___________________________
 
 function retourSaisie(){

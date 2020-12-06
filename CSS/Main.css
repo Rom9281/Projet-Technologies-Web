@@ -220,6 +220,12 @@ footer{
     font-weight: bold;
     font-size: larger;
 }
+
+.panier_rien{
+    color: red;
+    font-weight: bold;
+    font-size: larger;
+}
 .voyage{
     display: flex;
     flex-direction: column;
@@ -238,6 +244,19 @@ footer{
     border-color: black;
  
     
+}
+.panier_ens{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.panier_ticket{
+    width: 40%;
+    height: 40%;
+    padding: 20px;
+    border: solid;
+    border-color: black;
 }
 
 .voyage_image{
@@ -284,6 +303,11 @@ footer{
 }
 
 .voyage_espace{
+    display: block;
+    height: 60px;
+}
+
+.panier_espace{
     display: block;
     height: 60px;
 }

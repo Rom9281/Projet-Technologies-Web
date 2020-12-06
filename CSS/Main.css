@@ -90,7 +90,13 @@ header{
     left: 100%;
 
 }
-
+.Us{
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    border: 2px solid #00b8ab;
+    margin-left: 20%;
+}
 #image_button_top{
     border: 2px solid black;
     height: 50px;

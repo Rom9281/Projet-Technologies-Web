@@ -3,21 +3,21 @@
         "Nom":"Paris",
         "Id":"FR",
         "Image":"../IMG/paris-1836415_1920.jpg",
-        "Description":"La ville, lumiere, la capitale, paris ne peut qu'etre un excellent choix de voyage",
+        "Description":"La ville lumiere, la capitale, Paris ne peut qu'etre un excellent choix de voyage",
         "PrixAd":50
     },
     {
         "Nom":"Hong Kong",
         "Id":"CN",
         "Image":"../IMG/hong-kong-1081704_1920.jpg",
-        "Description":"La ville, lumiere, la capitale, paris ne peut qu'etre un excellent choix de voyage",
+        "Description":"Une des perle de l'asie, ce port envouatant aura tout pour vous seduire et vous ouvrir a la grande civilisation orrientale",
         "PrixAd":300
     },
     {
         "Nom":"Londres",
         "Id":"GB",
         "Image":"../IMG/london-441853_1920.jpg",
-        "Description":"Londres, la capitale britanique est une merveille",
+        "Description":"Londres, la capitale Britanique est une merveille",
         "PrixAd": 120
     }
 ]

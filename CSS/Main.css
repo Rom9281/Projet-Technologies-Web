@@ -9,7 +9,7 @@ header .NomAg {
     color: black;
     position: relative;
     font-family: Arial Black, Helvetica, sans-serif;
-    text-align: center;
+    padding-left: 30%;
     width: 88%;
 }
 
@@ -334,4 +334,16 @@ footer a{
 
 .map path[target="True"]:hover{
     fill: #00b8ab;
+}
+
+#form{
+    width: 270px;
+}
+
+#connect_button{
+    margin-left: 33%;
+    margin-top: 2mm;
+}
+.login_input{
+    margin-top: 2mm;
 }

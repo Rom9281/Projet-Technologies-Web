@@ -25,6 +25,42 @@ header .NomAg {
     mix-blend-mode: screen;
     padding: center;
 }
+.RetourMenu {
+    font-size: 20px;
+    display: inline-block;
+    background: white;
+    color: black;
+    position: relative;
+    font-family: Arial Black, Helvetica, sans-serif;
+    width: 49%;
+    text-align: center;
+}
+
+.RetourMenu::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right,#114c61, #9fe8fa);
+    content: '';
+    display: block;
+    mix-blend-mode: screen;
+    padding: center;
+}
+/* .RetourMenu{
+    display: inline-block;
+    width: 49.85%;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg,#114c61, #9fe8fa);
+    background-clip : text;
+    -webkit-text-fill-color: transparent;
+    height: 25px;
+    font-size: 20px;
+    font-family: Arial Black, Helvetica, sans-serif;
+} */
+
 header .Cart{
     width: 120px;
     height: 120px;
@@ -166,17 +202,7 @@ header .Cart{
     width: 120px;
     height: 120px;
 }
-.RetourMenu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: -webkit-linear-gradient(45deg,#114c61, #9fe8fa);
-    background-clip : text;
-    -webkit-text-fill-color: transparent;
-    height: 25px;
-    font-size: 20px;
-    font-family: Arial Black, Helvetica, sans-serif;
-}
+
 
 footer{
     background-color: rgb(36, 34, 34);

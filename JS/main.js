@@ -255,6 +255,26 @@ function printVilles(){
         var contenu = document.createTextNode(json[i].Description);
         descript.appendChild(contenu);
         link.appendChild(descript);
+
+        var div_vide = document.createElement("div");
+        div_vide.setAttribute('class','voyage_vide');
+        link.appendChild(div_vide);
+
+        //Le prix
+        var div_prix = document.createElement("div");
+        div_prix.setAttribute('class','voyage_prix');
+        var contenu = document.createTextNode("Prix adulte par jour : ");
+        div_prix.appendChild(contenu);
+
+        var contenu = document.createTextNode(json[i].PrixAd);
+        div_prix.appendChild(contenu);
+
+        var contenu = document.createTextNode("€");
+        div_prix.appendChild(contenu);
+
+        link.appendChild(div_prix);
+        
+        // ajoute le nœud texte au nouveau div créé
         div_gen.appendChild(link);
         div_p.appendChild(div_gen)
 

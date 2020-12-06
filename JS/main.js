@@ -468,7 +468,24 @@ function updatePath(){
         // place un attibut target sur les éléments contenus dans le json
         var currentPath = document.getElementById(json[i].Id)
         currentPath.setAttribute('target',"True")
+
+        currentPath.setAttribute('onclick',"toolPath()");
     }
 })
 }
 
+function toolPath(){
+    fetch("../JS/main.json")
+    .then(function(response) {
+    return response.json()
+    })
+    .then(function(json) {
+    for (var i = 0; i < json.length;i++) {
+        var initClass = "initClass('";
+        initClass += json[i].Nom;
+        initClass += "')";
+        initClass
+        window.location.href='./Formulaire.html';
+    }
+})
+}

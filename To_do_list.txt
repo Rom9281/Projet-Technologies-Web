@@ -7,26 +7,19 @@ Choses encore à faire non exaustive :
         - petite biographie de nous ou on se fait plaiz
         - Nos roles dans la création
         - date de création de l'entreprise
-- prix enfant à remplacer par 40% du prix adulte
-- footer du site calqué sur des sites cool genre bandeau noir et tout (privacy policy, lien à propos et contacts, etc...)
-- supplément de 12 €/jours/personnes
 - sur toutes les pages :
     - menu de navigation
-    - pied de page ( footer)
     - bouton retour en haut de la page qui n'apparait que quand l'utilisateur descend un peu
 - sur la page des contacts :
 
-- aucun enfant ne peux partir tout seul
 - Utiliser l'API de OpenWeatherApi pour la météo sur la page Index
 - filtrage des voyages pour gerer l'ordre d'affichage ou pour restreindre les voyages affichés.
     Les voyages doivent etre filtrés en direct
     tip : Vous penserez à adapter votre mini base de données de voyages en conséquence.
-- Autentification de l'utilisateur avec une base de donné de 3 - 4 comptes msuffiront juste pour montrer qu'il est fonctionnel.
-    doit etre simple ( nom utilisateur et mdp)
 - panier : possibilité de le visualiser, supprimer.
 - Il n'est pas obligé d'etre "responsive" c'est à dire s'adapter à la taille de la fenêtre dans laquelle il se trouve.
 - "une attention toute particulière sera portée sur l'accèsibilié du site."
-- "nous serons surtout attentifs sur la qualité et la clarté de votre code, plus que sur l’aspect « joli »de votre site !"
+- "nous serons surtout attentifs sur la qualité et la clarté de votre code, plus que sur l’aspect « joli » de votre site !"
 - "Vous intégrerez également différents éléments multimédia, comme des vidéos Youtube présentant vos destinations."
 - devise dans le formulaire et le récap.
 - fct printVilles --> Order non existant, remettre ou changer

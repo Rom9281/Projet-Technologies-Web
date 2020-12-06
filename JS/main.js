@@ -86,7 +86,7 @@ function returnMenu(){
 
 }
 function redirectionCarte(){
-    window.location.href='./Carte_interractive';
+    window.location.href='./Carte_interractive.html';
 }
 //_________________ LOCAL STORAGE _________________
 

@@ -85,6 +85,9 @@ function returnMenu(){
     }
 
 }
+function redirectionCarte(){
+    window.location.href='./Carte_interractive';
+}
 //_________________ LOCAL STORAGE _________________
 
 function saveChoice(variable,choix) {

@@ -203,7 +203,6 @@ footer{
     color: #114c61;
     align-self: center;
     text-align: center;
-    color: teal;
     padding: 20px;
     border: solid;
     border-color: black;
@@ -226,7 +225,7 @@ footer{
 
 .voyage_vide{
     display: block;
-    height: 25px;
+    height: 15px;
 }
 
 .voyage_descr{
@@ -241,6 +240,7 @@ footer{
     text-decoration: none;
     display: flex;
     flex-direction: column;
+    color: teal;
     
 }
 

@@ -228,6 +228,8 @@ function printVilles(){
         div2.appendChild(image);
         link.appendChild(div2);
 
+        var div_vide = document.createElement("div");
+        div_vide.setAttribute('class','voyage_vide');
         link.appendChild(div_vide);
         
         // Petite description de la ville

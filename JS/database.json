@@ -1,18 +1,18 @@
 [
     {
-        "Login": "21232f297a57a5a743894a0e4a801fc3",
-        "Password": "e3274be5c857fb42ab72d786e281b4b8"
+        "Login": "admin",
+        "Password": "adminpassword"
     },
     {
-        "Login": "",
-        "Password": ""
+        "Login": "oui2",
+        "Password": "oui2password"
     },
     {
-        "Login": "",
-        "Password": ""
+        "Login": "oui3",
+        "Password": "oui3password"
     },
     {
-        "Login": "",
-        "Password": ""
+        "Login": "oui4",
+        "Password": "oui4password"
     }
 ]

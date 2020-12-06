@@ -189,8 +189,22 @@ function printVilles(){
     return response.json()
     })
     .then(function(json) {
+
+    if (!(document.getElementById("voyage") == null)){
+        document.getElementById("voyage").remove();
+    }
     var div_p = document.createElement("div");
     div_p.setAttribute('class','voyage');
+    div_p.setAttribute('id','voyage');
+
+    var filtre = document.getElementById("filtre").value;
+    
+    if (filtre  == "croissant"){
+        json = sortCroissant(json)
+    }
+    if (filtre  == "decroissant"){
+        json = sortDecroissant(json)
+    }
 
     for (var i = 0; i < json.length;i++) {
         
@@ -255,7 +269,33 @@ function printVilles(){
     var currentDiv = document.getElementById('Villes');
     document.body.insertBefore(div_p, currentDiv);
     })
-   }
+}
+
+function sortDecroissant(json){
+    var valren = new Array;
+    while (json.length != 0){
+        var i_max = 0;
+        var val_max = 0;
+
+        for (var i = 0; i < json.length;i++) {
+            var prix =  json[i].PrixAd;
+            if (prix > val_max){
+                i_max = i;
+                val_max = json[i].PrixAd;
+            }
+        }
+        var max = json[i_max]
+        json.splice(i_max, 1)
+        valren.push(max)
+    }
+    return valren
+
+}
+
+function sortCroissant(json){
+    return sortDecroissant(json).reverse();
+
+}
 
 //___________________ RETOUR SAISIE ___________________________
 
@@ -279,6 +319,8 @@ function eraseInfo(){
     aVoyages.renseignements = "";
     saveVoyage(aVoyages)
 }
+
+
 //__________________ IMPRESSION DU RECAP ______________________
 
 function Recap(){

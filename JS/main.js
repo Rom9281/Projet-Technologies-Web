@@ -439,7 +439,9 @@ function printPanier(){
         btn.setAttribute('onclick',fonction);
         var contenu = document.createTextNode("Supprimer tout le panier");
         btn.appendChild(contenu);
-        div_gen.appendChild(btn)
+        div_p.appendChild(btn)
+
+        
         var currentDiv = document.getElementById('contenu');
         document.body.insertBefore(div_p, currentDiv);
     }

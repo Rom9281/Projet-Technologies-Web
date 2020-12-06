@@ -10,8 +10,29 @@
     <header>
         <img class="Logo" src="../IMG/logo.png" alt="Logotype de l'agence de voyage Zendhi">
         <span class="NomAg">VYG</span>
+        <div id="div_form">
+            <form id="form_login" action="Menu_Principal.html" method="GET">
+                <fieldset id="login">
+                    <legend id="se_connecter">Connectez-vous</legend>
+                    <label class="params" for="Username">Login :</label>
+                    <input type="text" name="Username" id="Username" class="login_input">
+                    <label class="params" for="Password">Password : </label>
+                    <input type="text" name="Password" id="Password" class="login_input">
+                    <input id="connect_button" type="submit" name="Soumettre" value="Se connecter" onclick="checkLogin()">
+                </fieldset>
+            </form>
+        </div>
+        <a href = "Panier.html">
         <img class="Cart" src="../IMG/cart.png" alt="Image du panier">
+        </a>
     </header>
+
+    <div class = "RetourMenu" onclick="returnMenu()">
+        <p>retour au menu principal</p>
+    </div>
+    <div class="RetourMenu" onclick="redirectionCarte()">
+            <p>Carte interractive</p>
+    </div>
 
     <h1>Panier</h1>
     

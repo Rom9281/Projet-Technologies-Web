@@ -58,7 +58,7 @@ function genId(){
 class cVoyage{
     constructor(destination, id){
         this.destination = destination;
-        this.id = Id;
+        this.id = id;
         this.nom = "";
         this.prenom = "";
         this.tel = "";
@@ -485,12 +485,11 @@ function toolPath(nom){
     })
     .then(function(json) {
     for (var i = 0; i < json.length;i++) {
-        if (json[i].Nom = nom){
-            var initClass = "initClass('";
-            initClass += nom;
-            initClass += "')";
-            initClass
+        if (json[i].Nom == nom){
+            initClass(json[i].Nom)
             window.location.href='./Formulaire.html';
+        }
+        else{
         }
     }
     })

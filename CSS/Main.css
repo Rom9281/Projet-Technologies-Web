@@ -34,6 +34,8 @@ header .NomAg {
     font-family: Arial Black, Helvetica, sans-serif;
     width: 49%;
     text-align: center;
+    z-index: 1;
+
 }
 
 .RetourMenu::before {
@@ -47,6 +49,7 @@ header .NomAg {
     display: block;
     mix-blend-mode: screen;
     padding: center;
+    z-index: 1;
 }
 /* .RetourMenu{
     display: inline-block;
@@ -76,6 +79,7 @@ header{
     top: 2mm;
     height: 120px;
     display: flex;
+    z-index: 3;
 }
 
 .Description{

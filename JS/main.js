@@ -504,9 +504,7 @@ function checkLogin(){
     })
     .then(function(json) {
         var Username = document.getElementById("Username").value;
-        alert(Username)
         var Password = document.getElementById("Password").value;
-        alert(Password)
         var alerte = true;
         for (var i = 0; i < json.length;i++) {
             if (Username == json[i].Login && Password == json[i].Password) {
@@ -516,7 +514,6 @@ function checkLogin(){
                 alerte = false;
             }        
         }
-        alert(alerte)
         if (alerte) {
             alert("Connexion réussie");
         } 

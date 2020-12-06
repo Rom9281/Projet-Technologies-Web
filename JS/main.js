@@ -58,7 +58,7 @@ function genId(){
 class cVoyage{
     constructor(destination, id){
         this.destination = destination;
-        this.id = Id;
+        this.id = id;
         this.nom = "";
         this.prenom = "";
         this.tel = "";
@@ -84,6 +84,9 @@ function returnMenu(){
         alert("   -   Retour Annulé   -   ");
     }
 
+}
+function redirectionCarte(){
+    window.location.href='./Carte_interractive.html';
 }
 //_________________ LOCAL STORAGE _________________
 
@@ -459,6 +462,7 @@ function saveF(){
 
 }
 
+//____________ Carte interractive (ciblage et redirection) ____________
 function updatePath(){
     fetch("../JS/main.json")
     .then(function(response) {
@@ -470,7 +474,56 @@ function updatePath(){
         // place un attibut target sur les éléments contenus dans le json
         var currentPath = document.getElementById(json[i].Id)
         currentPath.setAttribute('target',"True")
+        // place un onclick appelant la fonction toolPath avec l'id du path associé
+        var toolPath = "toolPath('";
+        toolPath += json[i].Nom;
+        toolPath += "')";
+        currentPath.setAttribute('onclick',toolPath);
     }
 })
 }
 
+function toolPath(nom){
+    fetch("../JS/main.json")
+    .then(function(response) {
+    return response.json()
+    })
+    .then(function(json) {
+    for (var i = 0; i < json.length;i++) {
+        if (json[i].Nom == nom){
+            initClass(json[i].Nom)
+            window.location.href='./Formulaire.html';
+        }
+        else{
+        }
+    }
+    })
+}
+
+// ____________ Vérification du login et password ____________
+
+function checkLogin(){
+    fetch("../JS/database.json")
+    .then(function(response) {
+    return response.json()
+    })
+    .then(function(json) {
+        var Username = document.getElementById("Username").value;
+        var Password = document.getElementById("Password").value;
+        var alerte = true;
+        for (var i = 0; i < json.length;i++) {
+            if (Username == json[i].Login && Password == json[i].Password) {
+                alerte = true;
+                break;
+            } else {
+                alerte = false;
+            }        
+        }
+        if (alerte) {
+            alert("Connexion réussie");
+        } 
+        if (!alerte) {
+            alert("Votre identifiant ou votre mot de passe est incorrect. Veuillez réessayer.");
+        }
+    })
+}

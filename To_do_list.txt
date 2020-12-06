@@ -30,3 +30,5 @@ Choses encore à faire non exaustive :
 - "Vous intégrerez également différents éléments multimédia, comme des vidéos Youtube présentant vos destinations."
 - devise dans le formulaire et le récap.
 - fct printVilles --> Order non existant, remettre ou changer
+- vérifier lignes 59 et 61 du js
+- 

@@ -9,7 +9,7 @@ header .NomAg {
     color: black;
     position: relative;
     font-family: Arial Black, Helvetica, sans-serif;
-    text-align: center;
+    padding-left: 30%;
     width: 88%;
 }
 
@@ -25,6 +25,45 @@ header .NomAg {
     mix-blend-mode: screen;
     padding: center;
 }
+.RetourMenu {
+    font-size: 20px;
+    display: inline-block;
+    background: white;
+    color: black;
+    position: relative;
+    font-family: Arial Black, Helvetica, sans-serif;
+    width: 49%;
+    text-align: center;
+    z-index: 1;
+
+}
+
+.RetourMenu::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right,#114c61, #9fe8fa);
+    content: '';
+    display: block;
+    mix-blend-mode: screen;
+    padding: center;
+    z-index: 1;
+}
+/* .RetourMenu{
+    display: inline-block;
+    width: 49.85%;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg,#114c61, #9fe8fa);
+    background-clip : text;
+    -webkit-text-fill-color: transparent;
+    height: 25px;
+    font-size: 20px;
+    font-family: Arial Black, Helvetica, sans-serif;
+} */
+
 header .Cart{
     width: 120px;
     height: 120px;
@@ -40,6 +79,7 @@ header{
     top: 2mm;
     height: 120px;
     display: flex;
+    z-index: 3;
 }
 
 .Description{
@@ -166,17 +206,7 @@ header .Cart{
     width: 120px;
     height: 120px;
 }
-.RetourMenu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: -webkit-linear-gradient(45deg,#114c61, #9fe8fa);
-    background-clip : text;
-    -webkit-text-fill-color: transparent;
-    height: 25px;
-    font-size: 20px;
-    font-family: Arial Black, Helvetica, sans-serif;
-}
+
 
 footer{
     background-color: rgb(36, 34, 34);
@@ -334,4 +364,16 @@ footer a{
 
 .map path[target="True"]:hover{
     fill: #00b8ab;
+}
+
+#form_login{
+    width: 270px;
+}
+
+#connect_button{
+    margin-left: 33%;
+    margin-top: 2mm;
+}
+.login_input{
+    margin-top: 2mm;
 }

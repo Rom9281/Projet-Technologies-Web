@@ -1,0 +1,18 @@
+[
+    {
+        "Login": "admin",
+        "Password": "adminpassword"
+    },
+    {
+        "Login": "oui2",
+        "Password": "oui2password"
+    },
+    {
+        "Login": "oui3",
+        "Password": "oui3password"
+    },
+    {
+        "Login": "oui4",
+        "Password": "oui4password"
+    }
+]

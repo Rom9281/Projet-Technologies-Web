@@ -5,34 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carte</title>
     <script src="../JS/main.js">
-        function redirectReservation(){
-            fetch("../JS/main.json")
-            .then(function(response) {
-            return response.json()
-            })
-            .then(function(json) {
-            for (var i = 0; i < json.length;i++) {
-
-                var path = document.getElementById(json[i].Id);
-                var link = document.createElement("a");
-                link.setAttribute('href','Formulaire.html');
-                var initClass = "initClass('";
-                initClass += json[i].Nom;
-                initClass += "')";
-                link.setAttribute('onclick',initClass);
-
-                link.appendChild(path);
-
-                var g = document.getElementsById("Carte");
-                g.appendChild(link)
-
-            }
-        })
-        }
     </script>
     <link rel="stylesheet" href="../CSS/Main.css">
 </head>
-
 <body onload="updatePath()">
     <header>
         <img class="Logo" src="../IMG/logo.png" alt="Logotype de l'agence de voyage Zendhi">

@@ -457,6 +457,7 @@ function saveF(){
 
 }
 
+//____________  Carte interractive (ciblage et redirection) ____________
 function updatePath(){
     fetch("../JS/main.json")
     .then(function(response) {
@@ -468,24 +469,29 @@ function updatePath(){
         // place un attibut target sur les éléments contenus dans le json
         var currentPath = document.getElementById(json[i].Id)
         currentPath.setAttribute('target',"True")
-
-        currentPath.setAttribute('onclick',"toolPath()");
+        // place un onclick appelant la fonction toolPath avec l'id du path associé
+        var toolPath = "toolPath('";
+        toolPath += json[i].Nom;
+        toolPath += "')";
+        currentPath.setAttribute('onclick',toolPath);
     }
 })
 }
 
-function toolPath(){
+function toolPath(nom){
     fetch("../JS/main.json")
     .then(function(response) {
     return response.json()
     })
     .then(function(json) {
     for (var i = 0; i < json.length;i++) {
-        var initClass = "initClass('";
-        initClass += json[i].Nom;
-        initClass += "')";
-        initClass
-        window.location.href='./Formulaire.html';
+        if (json[i].Nom = nom){
+            var initClass = "initClass('";
+            initClass += nom;
+            initClass += "')";
+            initClass
+            window.location.href='./Formulaire.html';
+        }
     }
-})
+    })
 }

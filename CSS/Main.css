@@ -221,10 +221,11 @@ label + input{
     width: 100%;
     
 }
+
 .coord{
     width: 30%;
     background-color: lightblue;
-    background-image: -webkit-linear-gradient(45deg,#26baee,#9fe8fa);
+    background-image: -webkit-linear-gradient(45deg,#00fff0, #37f0b2);
     border: solid;
     border-color: black;
 }
@@ -235,35 +236,35 @@ label + input{
 .info_voyage{
     width: 30%;
     background-color: lightblue;
-    background-image: -webkit-linear-gradient(200deg,#26baee,#9fe8fa);
+    background-image: -webkit-linear-gradient(200deg,#00fff0, #37f0b2);
     border: solid;
     border-color: black;
 }
 .info_voyageurs{
     width: 30%;
     background-color: lightblue;
-    background-image: -webkit-linear-gradient(200deg,#9fe8fa,#26baee);
+    background-image: -webkit-linear-gradient(0deg,#00fff0, #37f0b2);
     border: solid;
     border-color: black;
 }
 
 .id{
     background-color: lightblue;
-    background-image: -webkit-linear-gradient(200deg,#9fe8fa,#26baee);
+    background-image: -webkit-linear-gradient(200deg,#00fff0, #37f0b2);
     border: solid;
     border-color: black;
 }
 
 .prix{
     background-color: lightblue;
-    background-image: -webkit-linear-gradient(200deg,#9fe8fa,#26baee);
+    background-image: -webkit-linear-gradient(0deg,#00fff0, #37f0b2);
     border: solid;
     border-color: black;
 }
 
 .renseignement{
     background-color: lightblue;
-    background-image: -webkit-linear-gradient(200deg,#9fe8fa,#26baee);
+    background-image: -webkit-linear-gradient(60deg,#00fff0, #37f0b2);
     border: solid;
     border-color: black;
 }

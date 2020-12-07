@@ -181,17 +181,28 @@ h1{
 .description{
     color: rgb(47, 58, 68);
     font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
 }
 .champ1{
+    display: inline-block;
     background-color: rgba(0, 255, 123, 0.459);
     border-radius: 10px;
+    height: 210px;
+    width: 400px;
 }
 .Identité{
     margin-left: 1cm;
 }
-#fieldset_value{
+#petit_dej{
+    display: inline-block;
+}
+
+.fieldset_value{
     font-size: 150%;
     font-family: Arial, Helvetica, sans-serif;
+}
+#Renseignements{
+    height: 110px;
 }
 
 label + input{

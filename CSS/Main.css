@@ -214,6 +214,13 @@ label + input{
     border-color: black;
 }
 
+.renseignement{
+    background-color: lightblue;
+    background-image: -webkit-linear-gradient(200deg,#9fe8fa,#26baee);
+    border: solid;
+    border-color: black;
+}
+
 
 header{
     background:white;
@@ -433,4 +440,20 @@ footer a{
 }
 .login_input{
     margin-top: 2mm;
+}
+#valider{
+    margin: 0 0 0 30%;
+    color: white;
+    background-color: rgb(56, 226, 13);
+    border-radius: 2mm;
+    padding: 5mm 7mm 5mm 7mm;
+    font-size: 1.2rem;
+}
+#retour{
+    margin: 0 0 0 30%;
+    color: white;
+    background-color: rgb(185, 23, 23);
+    border-radius: 2mm;
+    padding: 5mm 7mm 5mm 7mm;
+    font-size: 1.2rem;
 }

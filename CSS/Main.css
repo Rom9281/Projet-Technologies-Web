@@ -479,6 +479,7 @@ footer a{
 #connect_button{
     margin-left: 33%;
     margin-top: 2mm;
+    background-color :rgb(0,255,122);
 }
 .form_button{
     margin: 0 0 0 30%;

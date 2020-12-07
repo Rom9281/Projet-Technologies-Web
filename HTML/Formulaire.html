@@ -60,40 +60,54 @@
        
        <label class="description" for="Numero_de_telephone">Téléphone<sup>*</sup> :</label>
        <input id="Numero_de_telephone" type="tel" name="Numero de telephone"><br><br>
-     </fieldset>
+    </fieldset>
  
-     <label class="description" for="Date_de_depart">Date de départ<sup>*</sup> :</label>
-     <input id="Date_de_depart" type="date" name="Date de depart"><br><br>
-     
-     <label class="description" for="Date_de_retour">Date de retour<sup>*</sup> :</label>
-     <input id="Date_de_retour" type="date" name="Date de retour"><br><br>
-     
-     <label class="description" for="Nombre_d'adultes">Nombre d'adultes<sub>*</sub> :</label>
-     <input id="Nombre_d'adultes" type="number" min="0" max="20" name="Nombre d'adultes" value = "0">
-     
-     <br><br>
-     
-     <label class="description" for="Nombre_d'enfants">Nombre d'enfants (-12 ans)<sup>*</sup> :</label>
-     <input id="Nombre_d'enfants" type="number" min="0" max="20" name="Nombre d'enfants" value = "0"><br><br>
-     
-     <p class="description">Petit-déjeuné inclus :</p>
-     <input type="checkbox" name="petit_dej" id="petit_dej">
-     
-     <br><br>
-     
-     Renseignements diverse que nous devrions savoir :<br>
-     <input id="Renseignements" type="text" size="70" name="Renseignements"><br><br>
- 
-     <span>
+    <label class="description" for="Date_de_depart">Date de départ<sup>*</sup> :</label>
+    <input id="Date_de_depart" type="date" name="Date de depart"><br><br>
+    
+    <label class="description" for="Date_de_retour">Date de retour<sup>*</sup> :</label>
+    <input id="Date_de_retour" type="date" name="Date de retour"><br><br>
+    
+    <label class="description" for="Nombre_d'adultes">Nombre d'adultes<sub>*</sub> :</label>
+    <input id="Nombre_d'adultes" type="number" min="0" max="20" name="Nombre d'adultes" value = "0">
+    
+    <br><br>
+    
+    <label class="description" for="Nombre_d'enfants">Nombre d'enfants (-12 ans)<sup>*</sup> :</label>
+    <input id="Nombre_d'enfants" type="number" min="0" max="20" name="Nombre d'enfants" value = "0"><br><br>
+    
+    <p class="description">Petit-déjeuné inclus :</p>
+    <input type="checkbox" name="petit_dej" id="petit_dej">
+    
+    <br><br>
+    
+    Renseignements diverse que nous devrions savoir :<br>
+    <input id="Renseignements" type="text" size="70" name="Renseignements"><br><br>
+
+    <div class = 'voyage_espace'></div>
+
+    <div class="cadre_prix">
+
+        <span class = "cadre_prix_sec">
+            <div class ="prix_aff">Prix :  </div>
+            <div id="prix_espace"></div>
+            <div id="prix"></div>
+        </span>
+        
+        <span class = "cadre_esp"></span>
+    </div>
+    
+    <div class = 'voyage_espace'></div>
+
+    <span>
        <input type="reset" value="Remise à zéro" name="Remise à zero" class="form_button remise">
        <input type="button" value="Soumettre" name="submit" class="form_button" onclick="saveF()">
-     </span>
+    </span>
      
-    </fieldset>
+    
 
 
-    <div>Le prix : </div>
-    <div id="prix"></div>
+    
 
  </form>
 </body>

@@ -261,6 +261,38 @@ label + input{
     border: solid;
     border-color: black;
 }
+.cadre_prix{
+    display: flex ;
+    flex-direction: row;
+    height: 40%
+}
+
+.cadre_prix_sec{
+    text-align: center;
+    width: 20%;
+    border: solid;
+    border-color: black;
+    background-color: #7bfad0;
+}
+
+.cadre_esp{
+    border: solid;
+    background-color: white;
+    border-color: white;
+    width: auto;
+}
+
+.prix_aff{
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#prix{
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
 
 .renseignement{
     background-color: lightblue;

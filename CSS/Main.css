@@ -29,6 +29,11 @@ header .NomAg {
     width: 88%;
 }
 
+h1{
+    color: #37f0b8;
+    font-size: 40px;
+}
+
 .NomAg::before {
     position: absolute;
     top: 0;
@@ -63,11 +68,10 @@ header .NomAg {
 .RetourMenu {
     cursor: pointer;
     border: solid;
-    border-color: darkgreen;
+    border-color: grey;
     font-size: 20px;
     display: inline-block;
     background: white;
-    color: darkgreen;
     position: relative;
     font-family: Arial Black, Helvetica, sans-serif;
     width: 34%;
@@ -87,11 +91,11 @@ header .NomAg {
 .RetourMenu1 {
     cursor: pointer;
     border: solid;
-    border-color: darkgreen;
+    border-color: grey;
     font-size: 20px;
     display: inline-block;
     background: white;
-    color: darkgreen;
+    color: grey;
     position: relative;
     font-family: Arial Black, Helvetica, sans-serif;
     width: 39%;
@@ -495,15 +499,16 @@ footer a{
 #valider{
     margin: 0 0 0 30%;
     color: white;
-    background-color: rgb(56, 226, 13);
+    background-color: rgb(116, 230, 88);
     border-radius: 2mm;
     padding: 5mm 7mm 5mm 7mm;
     font-size: 1.2rem;
 }
 #retour{
     margin: 0 0 0 30%;
-    color: white;
-    background-color: rgb(185, 23, 23);
+    color: black;
+    border-color: black;
+    background-color:white;
     border-radius: 2mm;
     padding: 5mm 7mm 5mm 7mm;
     font-size: 1.2rem;

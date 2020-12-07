@@ -547,7 +547,7 @@ function Recap(){
     chgbyId(voyage.nombre_adultes,'nombre_adultes');
     chgbyId(voyage.nombre_enfants,'nombre_enfants');
     chgbyId(voyage.renseignements,'renseignement');
-    chgbyId(voyage.prix,'prix');
+    chgbyId(voyage.prix+"€",'prix');
     if (voyage.petit_dej){
         chgbyId("Inclus",'petit_dej')
     }

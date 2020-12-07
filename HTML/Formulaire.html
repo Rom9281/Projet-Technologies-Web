@@ -48,19 +48,46 @@
  <form id='form' action="Recapitulatif.html" method="GET">
 
     <fieldset class="champ1">
-        <legend id="Identite"><b>Identité</b></legend>
+        <legend id="fieldset_value"><b>Identité</b></legend>
        <label class="description" for="Nom">Nom<sup>*</sup> :</label>
-       <input id="Nom" type="text" name="Nom"><br><br>
+       <input class="Identité" id="Nom" type="text" name="Nom"><br><br>
     
        <label class="description" for="Prenom">Prénom<sup>*</sup> :</label>
-       <input id="Prenom" type="text" name="Premon"><br><br>
+       <input class="Identité" id="Prenom" type="text" name="Premon"><br><br>
        
        <label class="description" for="Adresse_mail">Adresse mail<sup>*</sup> :</label>
-       <input id="Adresse_mail" type="email" name="email"><br><br>
+       <input class="Identité" id="Adresse_mail" type="email" name="email"><br><br>
        
        <label class="description" for="Numero_de_telephone">Téléphone<sup>*</sup> :</label>
+<<<<<<< HEAD
        <input id="Numero_de_telephone" type="tel" name="Numero de telephone"><br><br>
     </fieldset>
+=======
+       <input class="Identité" id="Numero_de_telephone" type="tel" name="Numero de telephone"><br><br>
+     </fieldset>
+ 
+     <label class="description" for="Date_de_depart">Date de départ<sup>*</sup> :</label>
+     <input id="Date_de_depart" type="date" name="Date de depart"><br><br>
+     
+     <label class="description" for="Date_de_retour">Date de retour<sup>*</sup> :</label>
+     <input id="Date_de_retour" type="date" name="Date de retour"><br><br>
+     
+     <label class="description" for="Nombre_d'adultes">Nombre d'adultes<sub>*</sub> :</label>
+     <input id="Nombre_d'adultes" type="number" min="0" max="20" name="Nombre d'adultes" value = "0">
+     
+     <br><br>
+     
+     <label class="description" for="Nombre_d'enfants">Nombre d'enfants (-12 ans)<sup>*</sup> :</label>
+     <input id="Nombre_d'enfants" type="number" min="0" max="20" name="Nombre d'enfants" value = "0"><br><br>
+     
+     <p class="description">Petit-déjeuné inclus :</p>
+     <input type="checkbox" name="petit_dej" id="petit_dej">
+     
+     <br><br>
+     
+     Renseignements diverse que nous devrions savoir :<br>
+     <input id="Renseignements" type="text" size="70" name="Renseignements"><br><br>
+>>>>>>> 87d86a74ce3c5e0215ada245af7978c93527132b
  
     <label class="description" for="Date_de_depart">Date de départ<sup>*</sup> :</label>
     <input id="Date_de_depart" type="date" name="Date de depart"><br><br>

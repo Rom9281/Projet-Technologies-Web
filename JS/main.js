@@ -274,9 +274,14 @@ function printVilles(){
 
         link.appendChild(div_prix);
 
+        //Creation d'un div pour espacer
+        var div_vide = document.createElement("div");
+        div_vide.setAttribute('class','voyage_vide');
+        link.appendChild(div_vide);
+
         // creer le div de la température sur place
         var div_temp = document.createElement("div");
-        div_temp.setAttribute("class","temperature");
+        div_temp.setAttribute("class","voyage_temp");
         printWeather(json,i,div_temp,link);
 
         // ajoute le nœud texte au nouveau div créé

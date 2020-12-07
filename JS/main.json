@@ -22,7 +22,7 @@
     }
     ,
     {
-        "Nom":"Rio de Janero",
+        "Nom":"Rio de Janeiro",
         "Id":"BR",
         "Image":"../IMG/rio-de-janeiro-1963744_1920.jpg",
         "Description":"La ville surnome la riviere de janvier est un paradis exotique exquis, ses plages de reves offrant de vrai vacances reposantes.",
@@ -31,7 +31,7 @@
     ,
     {
         "Nom":"Dubai",
-        "Id":"BR",
+        "Id":"AE",
         "Image":"../IMG/burj-khalifa-2212978_1920.jpg",
         "Description":"Luxe, gratte-ciels, Dubai est un veritable paradis artificelle.",
         "PrixAd": 200
@@ -39,7 +39,7 @@
     ,
     {
         "Nom":"Sydney",
-        "Id":"BR",
+        "Id":"AU",
         "Image":"../IMG/building-363244_1920.jpg",
         "Description":"Vivre, voir l'opera de Sydney, mourrir...",
         "PrixAd": 350
@@ -47,7 +47,7 @@
     ,
     {
         "Nom":"Rome",
-        "Id":"BR",
+        "Id":"IT",
         "Image":"../IMG/architecture-4529605_1920.jpg",
         "Description":"Comment ne pas vouloir visiter Rome? Dans cette ville a l'amosphere charge d'histoire, chaque batiment est un monument",
         "PrixAd": 70

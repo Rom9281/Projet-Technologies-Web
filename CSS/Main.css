@@ -1,7 +1,23 @@
 body{
     background-color: white;
 }
-
+header .Cart{
+    width: 120px;
+    height: 120px;
+}
+header .Logo{
+    width: 120px;
+    height: 120px;
+}
+header{
+    background:white;
+    border: solid;
+    position: sticky;
+    top: 2mm;
+    height: 120px;
+    display: flex;
+    z-index: 3;
+}
 header .NomAg {
     font-size: 90px;
     display: inline-block;
@@ -25,6 +41,7 @@ header .NomAg {
     mix-blend-mode: screen;
     padding: center;
 }
+
 .RetourMenu {
     font-size: 20px;
     display: inline-block;
@@ -35,7 +52,6 @@ header .NomAg {
     width: 49%;
     text-align: center;
     z-index: 1;
-
 }
 
 .RetourMenu::before {
@@ -63,24 +79,6 @@ header .NomAg {
     font-size: 20px;
     font-family: Arial Black, Helvetica, sans-serif;
 } */
-
-header .Cart{
-    width: 120px;
-    height: 120px;
-}
-header .Logo{
-    width: 120px;
-    height: 120px;
-}
-header{
-    background:white;
-    border: solid;
-    position: sticky;
-    top: 2mm;
-    height: 120px;
-    display: flex;
-    z-index: 3;
-}
 #scroll_top{
     display: inline-flex;
     height: 50px;
@@ -88,7 +86,20 @@ header{
     position: sticky;
     top: 5cm;
     left: 100%;
-
+}
+#image_button_top{
+    border: 2px solid black;
+    height: 50px;
+    width: 50px;
+}
+.a_propos{
+    font-family: Arial Black, Helvetica, sans-serif;
+}
+.title{
+    font-family: Arial Black, Helvetica, sans-serif;
+    text-align: center;
+    text-decoration: underline;
+    color: #00fff0;
 }
 .Us{
     display: inline-block;
@@ -96,11 +107,6 @@ header{
     width: 200px;
     border: 2px solid #00b8ab;
     margin-left: 20%;
-}
-#image_button_top{
-    border: 2px solid black;
-    height: 50px;
-    width: 50px;
 }
 .inline_block{
     display: inline-block;
@@ -222,7 +228,7 @@ label + input{
 }
 
 
-header{
+/* header{
     background:white;
     border: solid;
     position: -webkit-sticky;
@@ -230,13 +236,13 @@ header{
     top: 2mm;
     height: 120px;
     display: flex;
-}
+} */
 
-header .Cart{
+/* header .Cart{
     flex: 1;
     width: 120px;
     height: 120px;
-}
+} */
 
 
 footer{
@@ -391,6 +397,7 @@ footer{
 .Contact_ways{
     text-align: center;
     font-family: serif;
+    font-family: Arial Black, Helvetica, sans-serif;
 }
 
 #logotype_footer_div img{
@@ -405,7 +412,8 @@ div#Map iframe{
     margin-left: 29%;
 }
 #text_COVID{
-    font-family: sans-serif;
+    font-family: Arial Black, Helvetica, sans-serif;
+    font-size: small;
 }
 footer a{
     color: white;
@@ -456,4 +464,7 @@ footer a{
     border-radius: 2mm;
     padding: 5mm 7mm 5mm 7mm;
     font-size: 1.2rem;
+}
+.texte{
+    font-family: Arial Black, Helvetica, sans-serif;
 }

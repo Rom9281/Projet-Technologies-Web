@@ -419,7 +419,25 @@ function printPanier(){
             div_nb.appendChild(contenu);
 
             div_gen.appendChild(div_nb);
-            
+
+
+            //creer le div des dates
+            var div_date = document.createElement("div");
+            div_date.setAttribute('class','panier_dates');
+
+            var contenu = document.createTextNode("Depart : ");
+            div_date.appendChild(contenu);
+            var contenu = document.createTextNode(panier[i].date_depart);
+            div_date.appendChild(contenu);
+
+            var contenu = document.createTextNode("  |  Retour : ");
+            div_date.appendChild(contenu);
+            var contenu = document.createTextNode(panier[i].date_retour);
+            div_date.appendChild(contenu);
+
+            div_gen.appendChild(div_date);
+
+
             //creer le div du prix
             var div_prix = document.createElement("div");
             div_prix.setAttribute('class','panier_prix');
@@ -467,7 +485,7 @@ function printPanier(){
         btn.appendChild(contenu);
         div_p.appendChild(btn)
 
-        
+
         var currentDiv = document.getElementById('contenu');
         document.body.insertBefore(div_p, currentDiv);
     }

@@ -60,20 +60,45 @@ header .NomAg {
     height: 20%;
 }
 
-
 .RetourMenu {
+    cursor: pointer;
     border: solid;
     border-color: darkgreen;
     font-size: 20px;
     display: inline-block;
     background: white;
-    color: black;
+    color: darkgreen;
     position: relative;
     font-family: Arial Black, Helvetica, sans-serif;
     width: 34%;
     text-align: center;
     z-index: 1;
 }
+
+/* Version differente du retour menu pour le cas du recap et formulaire*/
+.ss_esp1{
+    background-color: white;
+    border:solid;
+    border-color: white;
+    display: inline-block;
+    height: 100%;
+    width: 30%;
+}
+.RetourMenu1 {
+    cursor: pointer;
+    border: solid;
+    border-color: darkgreen;
+    font-size: 20px;
+    display: inline-block;
+    background: white;
+    color: darkgreen;
+    position: relative;
+    font-family: Arial Black, Helvetica, sans-serif;
+    width: 39%;
+    text-align: center;
+    z-index: 1;
+}
+
 
 .RetourMenu::before {
     position: absolute;

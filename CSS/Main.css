@@ -42,14 +42,35 @@ header .NomAg {
     padding: center;
 }
 
+.ss_esp{
+    background-color: white;
+    border:solid;
+    border-color: white;
+    display: inline-block;
+    height: 100%;
+    width: 10%;
+}
+
+.ss_bar{
+    position: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 20%;
+}
+
+
 .RetourMenu {
+    border: solid;
+    border-color: darkgreen;
     font-size: 20px;
     display: inline-block;
     background: white;
     color: black;
     position: relative;
     font-family: Arial Black, Helvetica, sans-serif;
-    width: 49%;
+    width: 34%;
     text-align: center;
     z-index: 1;
 }

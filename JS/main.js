@@ -277,7 +277,7 @@ function printVilles(){
         // creer le div de la température sur place
         var div_temp = document.createElement("div");
         div_temp.setAttribute("class","temperature");
-        printWeather(json,i,div_temp,div_gen);
+        printWeather(json,i,div_temp,link);
 
         // ajoute le nœud texte au nouveau div créé
         div_gen.appendChild(link);
@@ -298,7 +298,7 @@ function printVilles(){
     })
 }
 
-function printWeather(json,i,div_temp,div_gen){
+function printWeather(json,i,div_temp,link){
         var name = json[i].Nom;
       if (name == "Rio de Janeiro") {
         var name = "Rio"
@@ -313,7 +313,7 @@ function printWeather(json,i,div_temp,div_gen){
       .then(function(json) {
         var temperature = json.main.temp;
         div_temp.innerHTML = "La température à " + name + " est actuellement de " + temperature + " °C";
-        div_gen.appendChild(div_temp)
+        link.appendChild(div_temp)
         })
 }
 

@@ -1,5 +1,5 @@
 //_________________ INITIALISATION _____________
-function init(){
+function init(){  // nettoie le localStorage, le panier et redirige
     localStorage.clear();
     var aVoyages = new Array;
     var aPanier = new Array;
@@ -8,7 +8,7 @@ function init(){
     window.location.replace("Menu_Principal.html");
 }
 
-function initClass(destination){
+function initClass(destination){  // crée le voyage
     var aVoyages = getListe("voyages");
     var id = genId();
     const voyage = new cVoyage(destination, id);
@@ -303,7 +303,7 @@ function printVilles(){
     })
 }
 
-function printWeather(json,i,div_temp,link){
+function printWeather(json,i,div_temp,link){ // affiche la météo dans les div des destinations
         var name = json[i].Nom;
       if (name == "Rio de Janeiro") {
         var name = "Rio"

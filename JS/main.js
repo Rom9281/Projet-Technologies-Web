@@ -136,7 +136,7 @@ function prntPrix(){
         prix = prix + nombre_enfants*prix_enfant;
         prix = prix*nb_jours;
         prix = prix + 14*nb_jours*(nombre_adultes+nombre_enfants)*petit_dej
-        chgbyId(prix,'prix');
+        chgbyId(prix + " €",'prix');
         var voyage = returnVoyage()
         voyage.prix = prix
         voyage.petit_dej = petit_dej;

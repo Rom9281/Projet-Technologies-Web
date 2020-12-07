@@ -164,15 +164,26 @@ h1{
     font: underline;
     text-decoration: underline;
 }
-
-#Remise_a_zero{
+.form_button{
     margin: 0 0 0 30%;
-    background-color: white;
+    color: white;
+    background-color: rgb(23, 80, 185);
+    border-radius: 2mm;
+    padding: 5mm 7mm 5mm 7mm;
+    font-size: 1.2rem;
 }
-
+.remise{
+    margin: 0 0 0 30%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
 
 .description{
     color: rgb(47, 58, 68);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.champ1{
+    background-color: rgba(0, 255, 123, 0.459);
 }
 
 #Identite{
@@ -485,14 +496,7 @@ footer a{
     margin-top: 2mm;
     background-color :rgb(0,255,122);
 }
-.form_button{
-    margin: 0 0 0 30%;
-    color: white;
-    background-color: rgb(23, 80, 185);
-    border-radius: 2mm;
-    padding: 5mm 7mm 5mm 7mm;
-    font-size: 1.2rem;
-}
+
 .login_input{
     margin-top: 2mm;
 }

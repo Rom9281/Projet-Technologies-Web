@@ -273,10 +273,17 @@ function printVilles(){
         div_prix.appendChild(contenu);
 
         link.appendChild(div_prix);
-        
+
+        // creer le div de la température sur place
+        var div_temp = document.createElement("div");
+        div_temp.setAttribute("class","temperature");
+        printWeather(json,i,div_temp,div_gen);
+
         // ajoute le nœud texte au nouveau div créé
         div_gen.appendChild(link);
         div_p.appendChild(div_gen)
+
+        
 
         // Creation de l'espace
         var div_esp = document.createElement("div");
@@ -289,6 +296,25 @@ function printVilles(){
     var currentDiv = document.getElementById('Villes');
     document.body.insertBefore(div_p, currentDiv);
     })
+}
+
+function printWeather(json,i,div_temp,div_gen){
+        var name = json[i].Nom;
+      if (name == "Rio de Janeiro") {
+        var name = "Rio"
+      }
+      var id = json[i].Id;
+      var url = "https://api.openweathermap.org/data/2.5/weather?q=" + name + "," + id + "&appid=c21a75b667d6f7abb81f118dcf8d4611&units=metric";
+  
+      fetch(url)
+      .then(function(response) {
+      return response.json()
+      })
+      .then(function(json) {
+        var temperature = json.main.temp;
+        div_temp.innerHTML = "La température à " + name + " est actuellement de " + temperature + " °C";
+        div_gen.appendChild(div_temp)
+        })
 }
 
 function sortDecroissant(json){

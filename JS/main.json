@@ -3,14 +3,14 @@
         "Nom":"Paris",
         "Id":"FR",
         "Image":"../IMG/paris-1836415_1920.jpg",
-        "Description":"La ville lumiere, la capitale, Paris ne peut qu'etre un excellent choix de voyage",
+        "Description":"La ville lumière, la capitale, Paris ne peut qu'être un excellent choix de voyage",
         "PrixAd":50
     },
     {
         "Nom":"Hong Kong",
         "Id":"CN",
         "Image":"../IMG/hong-kong-1081704_1920.jpg",
-        "Description":"Une des perle de l'asie, ce port envouatant aura tout pour vous seduire et vous ouvrir a la grande civilisation orrientale",
+        "Description":"Une des perles de l'Asie, ce port envoutant aura tout pour vous séduire et vous ouvrir à la grande civilisation orientale",
         "PrixAd":300
     },
     {
@@ -25,7 +25,7 @@
         "Nom":"Rio de Janeiro",
         "Id":"BR",
         "Image":"../IMG/rio-de-janeiro-1963744_1920.jpg",
-        "Description":"La ville surnome la riviere de janvier est un paradis exotique exquis, ses plages de reves offrant de vrai vacances reposantes.",
+        "Description":"La ville surnommée la riviere de janvier est un paradis exotique exquis, ses plages de rêves vous offriront de vrai vacances reposantes.",
         "PrixAd": 315
     }
     ,
@@ -33,7 +33,7 @@
         "Nom":"Dubai",
         "Id":"AE",
         "Image":"../IMG/burj-khalifa-2212978_1920.jpg",
-        "Description":"Luxe, gratte-ciels, Dubai est un veritable paradis artificelle.",
+        "Description":"Luxe, gratte-ciels, Dubai est un véritable paradis artificel.",
         "PrixAd": 200
     }
     ,
@@ -49,7 +49,7 @@
         "Nom":"Rome",
         "Id":"IT",
         "Image":"../IMG/architecture-4529605_1920.jpg",
-        "Description":"Comment ne pas vouloir visiter Rome? Dans cette ville a l'amosphere charge d'histoire, chaque batiment est un monument",
+        "Description":"Comment ne pas vouloir visiter Rome ? Dans cette ville à l'amosphere chargée d'histoire, chaque bâtiment est un monument",
         "PrixAd": 70
     }
 ]

@@ -141,14 +141,6 @@ header .NomAg {
     background-color: white;
 }
 
-#submit{
-    margin: 0 0 0 30%;
-    color: white;
-    background-color: rgb(23, 80, 185);
-    border-radius: 2mm;
-    padding: 5mm 7mm 5mm 7mm;
-    font-size: 1.2rem;
-}
 
 .description{
     color: rgb(47, 58, 68);
@@ -452,6 +444,7 @@ footer a{
 
 .map path[target="True"]:hover{
     fill: #00b8ab;
+    cursor: pointer;
 }
 
 #form_login{
@@ -461,6 +454,14 @@ footer a{
 #connect_button{
     margin-left: 33%;
     margin-top: 2mm;
+}
+.form_button{
+    margin: 0 0 0 30%;
+    color: white;
+    background-color: rgb(23, 80, 185);
+    border-radius: 2mm;
+    padding: 5mm 7mm 5mm 7mm;
+    font-size: 1.2rem;
 }
 .login_input{
     margin-top: 2mm;

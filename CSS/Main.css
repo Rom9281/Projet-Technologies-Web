@@ -431,6 +431,7 @@ footer a{
 
 .map path[target="True"]:hover{
     fill: #00b8ab;
+    cursor: pointer;
 }
 
 #form_login{
